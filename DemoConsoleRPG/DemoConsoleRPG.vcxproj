@@ -141,6 +141,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp" />
+    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="game_state.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="game_state.h" />
+    <ClInclude Include="screen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
