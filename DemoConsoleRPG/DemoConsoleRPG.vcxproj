@@ -142,12 +142,14 @@
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_state.cpp" />
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h" />
+    <ClInclude Include="explore_screen.h" />
     <ClInclude Include="game_data.h" />
     <ClInclude Include="game_state.h" />
     <ClInclude Include="menu_screen.h" />
