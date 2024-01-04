@@ -1,5 +1,5 @@
 #include "engine.h"
-//#include "screen_manager.h"
+#include "screen_manager.h"
 
 #include <iostream> 
 #include <format>
@@ -48,7 +48,7 @@ void Engine::update() {
 void Engine::run() 
 {
   init();
-  //ScreenManager::createScreen(GameData::Screens::MENU_SCREEN);
+  ScreenManager::createScreen(GameData::Screens::MENU_SCREEN);
 
   while (mRunning && !mGameState.isEmpty()) {
     render();
