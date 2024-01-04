@@ -25,6 +25,12 @@
     <Filter Include="Исходные файлы\Screen">
       <UniqueIdentifier>{27a3d78e-ed95-40a3-a037-6ddd72029fa1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Interface">
+      <UniqueIdentifier>{02869d4a-e945-45e0-9759-585a81bac508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Interface">
+      <UniqueIdentifier>{3cc7d63c-730f-4c23-ab2f-32e535bd3a1a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -36,13 +42,16 @@
     <ClCompile Include="game_state.cpp">
       <Filter>Исходные файлы\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="screen_manager.cpp">
-      <Filter>Исходные файлы\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="menu_screen.cpp">
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
     <ClCompile Include="explore_screen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="console_hud.cpp">
+      <Filter>Исходные файлы\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="screen_manager.cpp">
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -67,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="explore_screen.h">
       <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="console_hud.h">
+      <Filter>Файлы заголовков\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,8 +5,8 @@
 #include "player.h"
 #include "inventory.h"
 #include "enemy_manager.h"
-#include "object_manager.h" 
-#include "console_hud.h" 
+#include "object_manager.h" */
+#include "console_hud.h" /*
 #include "level.h"
 #include "stats.h" */
 
@@ -27,8 +27,8 @@ private:
 	Player mPlayer;
 	Inventory mInventory;
 	EnemyManager mEnemyManager;
-	ObjectManager mObjectManager; 
-	ConsoleHUD mConsoleHUD; 
+	ObjectManager mObjectManager; */
+	ConsoleHUD mConsoleHUD; /*
 	Level mLevel;
 	Map mCurrentMap;
 	Stats mStats;

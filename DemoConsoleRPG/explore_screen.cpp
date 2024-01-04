@@ -26,14 +26,14 @@ void ExploreScreen::init()
 
 void ExploreScreen::inputHandler()
 { 
-  if (mState == GameplayState::PLAYER_INPUT) { /*  
+  if (mState == GameplayState::PLAYER_INPUT) {  
     mConsoleHUD.displayCommandString();
     std::string cmd;
     std::cin >> cmd;
     
     if (cmd == "quit") {
       GameState::destroyScreen();
-    }
+    } /*
     else if (cmd == "west") {
       mPlayer.moveWest();
       mPlayer.moving(true);
