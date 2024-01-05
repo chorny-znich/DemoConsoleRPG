@@ -96,6 +96,12 @@
     <ClCompile Include="player.cpp">
       <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
+    <ClCompile Include="player_screen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="stats.cpp">
+      <Filter>Исходные файлы\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -142,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>Файлы заголовков\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="player_screen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="stats.h">
+      <Filter>Файлы заголовков\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

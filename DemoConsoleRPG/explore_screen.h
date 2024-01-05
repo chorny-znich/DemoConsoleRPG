@@ -8,7 +8,7 @@
 #include "object_manager.h" */
 #include "console_hud.h"
 #include "level.h"
-//#include "stats.h"
+#include "stats.h"
 
 class ExploreScreen : public Screen
 {	
@@ -31,15 +31,15 @@ private:
 	ConsoleHUD mConsoleHUD;
 	Level mLevel;
 	Map mCurrentMap;
-//	Stats mStats;
+	Stats mStats;
 	 
 	bool collisionDetection(GameData::Position pos, GameData::Movement move); /*
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
 	bool checkPlayerNearby(GameData::Position pos);
 	void pickItem();
-	void useLadder();
+	void useLadder();*/
 	void showStats(Player& player);
-	void showInventory(); */
+//	void showInventory();
 	std::string showLocationInfo();
 	void changeMap();
 

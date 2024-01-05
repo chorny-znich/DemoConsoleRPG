@@ -14,8 +14,8 @@
 #include "game_state.h"
 
 ExploreScreen::ExploreScreen() :
-  mCurrentMap{0}/*,
-  mStats{mPlayer, mInventory}*/
+  mCurrentMap{0},
+  mStats{mPlayer/*, mInventory*/ }
 {}
 
 void ExploreScreen::init()
@@ -55,10 +55,10 @@ void ExploreScreen::inputHandler()
     }
     else if (cmd == "go") {
       useLadder();
-    }
+    }*/
     else if (cmd == "hero") {
       showStats(mPlayer);
-    }
+    }/*
     else if (cmd == "bag") {
       showInventory();
     } */
@@ -256,12 +256,12 @@ void ExploreScreen::useLadder()
     mConsoleHUD.setBottomHUD(std::format("There is no ladder here"), 1);
   }
 }
- 
+*/ 
 void ExploreScreen::showStats(Player& player)
 {
   ScreenManager::createScreen(GameData::Screens::PLAYER_SCREEN);
 }
-
+/*
 void ExploreScreen::showInventory()
 {
   ScreenManager::createScreen(GameData::Screens::INVENTORY_SCREEN);
