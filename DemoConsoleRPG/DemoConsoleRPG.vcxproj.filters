@@ -31,6 +31,12 @@
     <Filter Include="Исходные файлы\Interface">
       <UniqueIdentifier>{3cc7d63c-730f-4c23-ab2f-32e535bd3a1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Level">
+      <UniqueIdentifier>{e92e2af4-6c92-4534-bd52-5936eecc8cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Level">
+      <UniqueIdentifier>{fee708a6-fd6d-4347-8576-784fbba9a130}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -53,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="screen_manager.cpp">
       <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="level.cpp">
+      <Filter>Исходные файлы\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>Исходные файлы\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="location.cpp">
+      <Filter>Исходные файлы\Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +94,18 @@
     </ClInclude>
     <ClInclude Include="console_hud.h">
       <Filter>Файлы заголовков\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
+      <Filter>Файлы заголовков\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Файлы заголовков\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="location.h">
+      <Filter>Файлы заголовков\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="map_symbols.h">
+      <Filter>Файлы заголовков\Level</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

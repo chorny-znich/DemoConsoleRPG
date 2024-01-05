@@ -1,0 +1,11 @@
+[player]
+Name=Vargar
+Experience=0
+Health=20
+Attack=3
+Defence=11
+Damage_min=2
+Damage_max=5
+Position_x=1
+Position_y=1
+Symbol=@

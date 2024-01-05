@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "location.h"
+#include "location.h"
 #include <vector>
 #include <string>
 //#include <utility>
@@ -8,7 +8,7 @@
 
 namespace GameData { 
   using TextMap = std::vector<std::string>;
-//  using LocationMap = std::vector<Location>; 
+  using LocationMap = std::vector<Location>; 
   using Position = std::pair<size_t, size_t>;
   using Movement = std::pair<int, int>;
 

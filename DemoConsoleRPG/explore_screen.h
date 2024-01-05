@@ -1,14 +1,14 @@
 #pragma once
 
 #include "screen.h"
-/*#include "map.h" 
+#include "map.h" /*
 #include "player.h"
 #include "inventory.h"
 #include "enemy_manager.h"
 #include "object_manager.h" */
-#include "console_hud.h" /*
+#include "console_hud.h"
 #include "level.h"
-#include "stats.h" */
+//#include "stats.h"
 
 class ExploreScreen : public Screen
 {	
@@ -28,11 +28,11 @@ private:
 	Inventory mInventory;
 	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager; */
-	ConsoleHUD mConsoleHUD; /*
+	ConsoleHUD mConsoleHUD;
 	Level mLevel;
 	Map mCurrentMap;
-	Stats mStats;
-	*/ /*
+//	Stats mStats;
+	 /*
 	bool collisionDetection(GameData::Position pos, GameData::Movement move);
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
 	bool checkPlayerNearby(GameData::Position pos);
@@ -40,9 +40,9 @@ private:
 	void useLadder();
 	void showStats(Player& player);
 	void showInventory();
-	std::string showLocationInfo();
+	std::string showLocationInfo(); */
 	void changeMap();
-	*/
+
 public:
 	ExploreScreen();
 

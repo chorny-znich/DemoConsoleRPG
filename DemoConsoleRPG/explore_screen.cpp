@@ -13,15 +13,15 @@
 #include "screen_manager.h" 
 #include "game_state.h"
 
-ExploreScreen::ExploreScreen()/* :
-  mCurrentMap{0},
+ExploreScreen::ExploreScreen() :
+  mCurrentMap{0}/*,
   mStats{mPlayer, mInventory}*/
 {}
 
 void ExploreScreen::init()
-{ /*
+{
   mLevel.init();
-  changeMap(); */   
+  changeMap();   
 }
 
 void ExploreScreen::inputHandler()
@@ -120,8 +120,8 @@ void ExploreScreen::update()
   } 
   // prepare the current map and the interface to render
   if (mState == GameplayState::PLAYER_TURN_SHOW || mState == GameplayState::ENEMY_TURN_SHOW || 
-    mState == GameplayState::START) { /*
-    mCurrentMap.createRenderMap();
+    mState == GameplayState::START) {
+    mCurrentMap.createRenderMap(); /*
     mCurrentMap.setObjects(mObjectManager.getObjects());
     mCurrentMap.setEnemies(mEnemyManager.getEnemies());
     mCurrentMap.setPlayer(mPlayer.getPosition());
@@ -136,12 +136,12 @@ void ExploreScreen::update()
 void ExploreScreen::render()
 { 
   if (mState == GameplayState::PLAYER_TURN_SHOW || mState == GameplayState::ENEMY_TURN_SHOW || 
-    mState == GameplayState::START) { /*
+    mState == GameplayState::START) {
     mConsoleHUD.showTopDivider();
     mConsoleHUD.displayTopHUD(); 
     mCurrentMap.render();  
     mConsoleHUD.displayBottomHUD();
-    mConsoleHUD.showBottomDivider(); */
+    mConsoleHUD.showBottomDivider();
     if (mState == GameplayState::ENEMY_TURN_SHOW || mState == GameplayState::START) {
       mState = GameplayState::PLAYER_INPUT;
     }
@@ -294,15 +294,15 @@ std::string ExploreScreen::showLocationInfo()
   
   return result;
 }
-
+*/
 void ExploreScreen::changeMap()
 {
   mCurrentMap = mLevel.getCurrentMap();
-  mPlayer.spawn(mLevel.getPlayerSpawnPosition());
+  /*mPlayer.spawn(mLevel.getPlayerSpawnPosition());
   mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());
-  mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
+  mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());*/
   mState = GameplayState::START;
-}*/
+}
 /*
 Player& ExploreScreen::getCurrentPlayer()
 {

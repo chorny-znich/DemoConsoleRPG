@@ -1,0 +1,121 @@
+#include "map.h"
+#include "map_symbols.h"
+#include <iostream>
+#include <fstream>
+#include <format>
+/*#include "money.h"
+#include "ladder.h"
+ */ 
+//#include <memory>
+ 
+Map::Map(size_t id) :
+  mId{id}
+{  
+}
+
+void Map::loadMap(const std::string& filename) 
+{ 
+  std::ifstream ifs(filename);
+  if (ifs) {
+    std::string line;
+    while (std::getline(ifs, line)) {
+      mTextMap.push_back(std::move(line));
+    }
+  }
+  else {
+    std::cerr << std::format("can't open file: {}\n\n", filename);
+  }
+  mMapSize = {mTextMap[0].size(), mTextMap.size()};
+}
+
+void Map::createRenderMap()
+{
+  mRenderMap.clear();
+  for (size_t y{ 0 }; y < mMapSize.y; y++) {
+    std::string str{};
+    for (size_t x{ 0 }; x < mMapSize.x; x++) {
+      str += mLocationMap.at(y * mMapSize.x + x).getSymbol();
+    }
+    mRenderMap.push_back(std::move(str));
+  }
+}
+
+void Map::render() {
+  for (const auto& str : mRenderMap) {
+    std::cout << str << '\n';
+  }
+}
+/*
+void Map::setPlayer(GameData::Position pos)
+{
+  mRenderMap[pos.second][pos.first] = MapSymbols::PLAYER;
+  mLocationMap[pos.second * mMapSize.x + pos.first].setPlayer(true);
+}
+
+void Map::clearPlayer(GameData::Position pos)
+{
+  mLocationMap[pos.second * mMapSize.x + pos.first].setPlayer(false);
+}
+*/ /*
+void Map::setEnemies(const std::vector<Enemy>& enemies)
+{
+  for (const auto enemy : enemies) {
+    if (enemy.isActive()) {
+      mRenderMap[enemy.getPosition().second][enemy.getPosition().first] = enemy.getSymbol();
+      mLocationMap[enemy.getPosition().second * mMapSize.x + enemy.getPosition().first].setEnemy(true);
+    }
+    else {
+      mRenderMap[enemy.getPosition().second][enemy.getPosition().first] = MapSymbols::CORPSE;
+      mLocationMap[enemy.getPosition().second * mMapSize.x + enemy.getPosition().first].setEnemy(false);
+    }
+  }
+}
+
+void Map::clearEnemy(GameData::Position pos)
+{
+  mLocationMap[pos.second * mMapSize.x + pos.first].setEnemy(false);
+}
+*/ /*
+void Map::setObjects(const std::vector<std::shared_ptr<GameObject>>& objects)
+{
+  for (const auto& object : objects) {
+    mRenderMap[object->getPosition().second][object->getPosition().first] = object->getSymbol();
+    mLocationMap[object->getPosition().second * mMapSize.x + object->getPosition().first].setObject(true);  
+  }
+}
+
+void Map::clearObject(GameData::Position pos)
+{
+  mLocationMap[pos.second * mMapSize.x + pos.first].setObject(false);
+}
+*/
+void Map::createMap(const std::string& filename)
+{  
+  loadMap(filename);  
+  for (const auto& str : mTextMap) {
+    for (const char ch : str) {
+      Location newLocation; 
+      newLocation.setSymbol(ch); 
+      // check for passability
+      if (ch == MapSymbols::WALL) {
+        newLocation.setBarrier(true);
+      } 
+      mLocationMap.push_back(std::move(newLocation));
+    }
+  } 
+}
+
+GameData::LocationMap& Map::getMap()
+{
+  return mLocationMap;
+}
+
+sf::Vector2u Map::getMapSize() const
+{
+  return mMapSize;
+}
+
+Location& Map::getCurrentLocation(GameData::Position pos)
+{
+  return mLocationMap.at(pos.second * getMapSize().x + pos.first);
+}

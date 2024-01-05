@@ -1,0 +1,14 @@
+[general]
+Enemies_amount=1
+
+[enemy_1]
+Name=Goblin
+Experience_for_kill=10
+Health=6
+Attack=2
+Defence=6
+Damage_min=1
+Damage_max=2
+Position_x=3
+Position_y=3
+Symbol=g
