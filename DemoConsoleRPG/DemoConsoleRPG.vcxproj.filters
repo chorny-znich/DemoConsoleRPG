@@ -55,6 +55,12 @@
     <Filter Include="Исходные файлы\Player">
       <UniqueIdentifier>{ccd1d0cd-d877-4f65-8005-fce2eb779143}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Object">
+      <UniqueIdentifier>{880bbfb0-6cb9-4d48-abac-60fbe03cc385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Object">
+      <UniqueIdentifier>{7e228c3d-a99a-449f-be62-973aa3629b45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -101,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="stats.cpp">
       <Filter>Исходные файлы\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object.cpp">
+      <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="stats.h">
       <Filter>Файлы заголовков\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object_type.h">
+      <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
