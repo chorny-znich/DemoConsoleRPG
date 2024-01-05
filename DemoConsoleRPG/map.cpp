@@ -45,7 +45,7 @@ void Map::render() {
     std::cout << str << '\n';
   }
 }
-/*
+
 void Map::setPlayer(GameData::Position pos)
 {
   mRenderMap[pos.second][pos.first] = MapSymbols::PLAYER;
@@ -56,7 +56,7 @@ void Map::clearPlayer(GameData::Position pos)
 {
   mLocationMap[pos.second * mMapSize.x + pos.first].setPlayer(false);
 }
-*/ /*
+ /*
 void Map::setEnemies(const std::vector<Enemy>& enemies)
 {
   for (const auto enemy : enemies) {

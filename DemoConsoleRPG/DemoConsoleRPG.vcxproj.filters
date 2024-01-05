@@ -37,6 +37,24 @@
     <Filter Include="Исходные файлы\Level">
       <UniqueIdentifier>{fee708a6-fd6d-4347-8576-784fbba9a130}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Player">
+      <UniqueIdentifier>{20145cdc-a8c8-47c6-93a2-874571e1b7cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\RP system">
+      <UniqueIdentifier>{0493912e-b1be-485e-9484-85b0e301ef0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Entity">
+      <UniqueIdentifier>{c53c9e6b-c895-4486-8ba5-3efd93b59b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\RP system">
+      <UniqueIdentifier>{5facd2af-0c7e-492b-b09a-46e2f64e0eed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Entity">
+      <UniqueIdentifier>{18751aa0-49be-498f-94b0-51b3bdbcea9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Player">
+      <UniqueIdentifier>{ccd1d0cd-d877-4f65-8005-fce2eb779143}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -68,6 +86,15 @@
     </ClCompile>
     <ClCompile Include="location.cpp">
       <Filter>Исходные файлы\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="rp_stats.cpp">
+      <Filter>Исходные файлы\RP system</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Исходные файлы\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +133,15 @@
     </ClInclude>
     <ClInclude Include="map_symbols.h">
       <Filter>Файлы заголовков\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Файлы заголовков\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="rp_stats.h">
+      <Filter>Файлы заголовков\RP system</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Файлы заголовков\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

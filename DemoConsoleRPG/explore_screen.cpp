@@ -33,7 +33,7 @@ void ExploreScreen::inputHandler()
     
     if (cmd == "quit") {
       GameState::destroyScreen();
-    } /*
+    }
     else if (cmd == "west") {
       mPlayer.moveWest();
       mPlayer.moving(true);
@@ -49,7 +49,7 @@ void ExploreScreen::inputHandler()
     else if (cmd == "south") {
       mPlayer.moveSouth();
       mPlayer.moving(true);
-    }
+    } /*
     else if (cmd == "pick") {
       pickItem();
     }
@@ -68,8 +68,8 @@ void ExploreScreen::inputHandler()
 
 void ExploreScreen::update()
 {
-  if (mState == GameplayState::PLAYER_TURN) { /*
-    if (mPlayer.isMoving()) {
+  if (mState == GameplayState::PLAYER_TURN) {
+    if (mPlayer.isMoving()) { /*
       if (battleDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
         Enemy& enemy{ mEnemyManager.getEnemy({ mPlayer.getPosition().first + mPlayer.getMovement().first,
           mPlayer.getPosition().second + mPlayer.getMovement().second }) };
@@ -79,13 +79,13 @@ void ExploreScreen::update()
           mCurrentMap.clearEnemy(enemy.getPosition());
         }
       }
-      else if (!collisionDetection(mPlayer.getPosition(), mPlayer.getMovement())) { 
+      else */if (!collisionDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
         mCurrentMap.clearPlayer(mPlayer.getPosition()); 
         mPlayer.update();
         mConsoleHUD.setBottomHUD("", 1);
       } 
     } 
-    mConsoleHUD.setBottomHUD(showLocationInfo(), 0); */
+    mConsoleHUD.setBottomHUD(showLocationInfo(), 0);
     mState = GameplayState::PLAYER_TURN_SHOW;
   } 
   if (mState == GameplayState::ENEMY_TURN) { /*
@@ -123,13 +123,13 @@ void ExploreScreen::update()
     mState == GameplayState::START) {
     mCurrentMap.createRenderMap(); /*
     mCurrentMap.setObjects(mObjectManager.getObjects());
-    mCurrentMap.setEnemies(mEnemyManager.getEnemies());
+    mCurrentMap.setEnemies(mEnemyManager.getEnemies()); */
     mCurrentMap.setPlayer(mPlayer.getPosition());
     
     mConsoleHUD.setTopHud(std::string{ std::format("Name: {} exp:{} ${}", mPlayer.getName(), mPlayer.getExperience(),
       mPlayer.getMoney()) }, 0);
     mConsoleHUD.setTopHud(std::string{ std::format("HP:{}/{}", mPlayer.getHealth(), mPlayer.getMaxHealth()) }, 1);
-    mConsoleHUD.setTopHud(std::string{ std::format("Atk:{} Def:{}", mPlayer.getAttack(), mPlayer.getDefence()) }, 2); */
+    mConsoleHUD.setTopHud(std::string{ std::format("Atk:{} Def:{}", mPlayer.getAttack(), mPlayer.getDefence()) }, 2);
   } 
 }
 
@@ -176,7 +176,7 @@ bool ExploreScreen::checkPlayerNearby(GameData::Position pos)
   
   return battleStatus;
 }
-
+*/
 bool ExploreScreen::collisionDetection(GameData::Position pos, GameData::Movement move)
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
@@ -188,7 +188,7 @@ bool ExploreScreen::collisionDetection(GameData::Position pos, GameData::Movemen
   
   return false;
 }
-
+/*
 bool ExploreScreen::battleDetection(GameData::Position pos, GameData::Movement move)
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
@@ -266,7 +266,7 @@ void ExploreScreen::showInventory()
 {
   ScreenManager::createScreen(GameData::Screens::INVENTORY_SCREEN);
 }
-
+*/
 std::string ExploreScreen::showLocationInfo()
 {
   std::string result{};
@@ -274,7 +274,7 @@ std::string ExploreScreen::showLocationInfo()
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
   Location& location = mCurrentMap.getCurrentLocation(currentPlayerLocation);
   if (location.isObject()) {
-    try {
+  /*  try {
       std::shared_ptr<GameObject> pObject = mObjectManager.getObject(currentPlayerLocation);
       if (pObject->getType() == GameObjectType::MONEY) {
         auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
@@ -286,7 +286,7 @@ std::string ExploreScreen::showLocationInfo()
     }
     catch (std::runtime_error re) {
       std::cout << std::format("{} in showLocationInfo()\n", re.what());
-    }  
+    } */  
   }
   else {
     result = std::format("Nothing is interesting here");
@@ -294,7 +294,7 @@ std::string ExploreScreen::showLocationInfo()
   
   return result;
 }
-*/
+
 void ExploreScreen::changeMap()
 {
   mCurrentMap = mLevel.getCurrentMap();

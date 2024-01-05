@@ -1,8 +1,8 @@
 #pragma once
 
 #include "screen.h"
-#include "map.h" /*
-#include "player.h"
+#include "map.h"
+#include "player.h" /*
 #include "inventory.h"
 #include "enemy_manager.h"
 #include "object_manager.h" */
@@ -23,8 +23,8 @@ private:
 		ENEMY_TURN_SHOW
 	};
 	GameplayState mState{ GameplayState::START };
-	/*
-	Player mPlayer;
+	
+	Player mPlayer; /*
 	Inventory mInventory;
 	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager; */
@@ -32,15 +32,15 @@ private:
 	Level mLevel;
 	Map mCurrentMap;
 //	Stats mStats;
-	 /*
-	bool collisionDetection(GameData::Position pos, GameData::Movement move);
+	 
+	bool collisionDetection(GameData::Position pos, GameData::Movement move); /*
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
 	bool checkPlayerNearby(GameData::Position pos);
 	void pickItem();
 	void useLadder();
 	void showStats(Player& player);
-	void showInventory();
-	std::string showLocationInfo(); */
+	void showInventory(); */
+	std::string showLocationInfo();
 	void changeMap();
 
 public:
