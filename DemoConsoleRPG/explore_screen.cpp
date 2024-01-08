@@ -121,9 +121,9 @@ void ExploreScreen::update()
   // prepare the current map and the interface to render
   if (mState == GameplayState::PLAYER_TURN_SHOW || mState == GameplayState::ENEMY_TURN_SHOW || 
     mState == GameplayState::START) {
-    mCurrentMap.createRenderMap(); /*
+    mCurrentMap.createRenderMap();
     mCurrentMap.setObjects(mObjectManager.getObjects());
-    mCurrentMap.setEnemies(mEnemyManager.getEnemies()); */
+  //  mCurrentMap.setEnemies(mEnemyManager.getEnemies());
     mCurrentMap.setPlayer(mPlayer.getPosition());
     
     mConsoleHUD.setTopHud(std::string{ std::format("Name: {} exp:{} ${}", mPlayer.getName(), mPlayer.getExperience(),
@@ -299,8 +299,8 @@ void ExploreScreen::changeMap()
 {
   mCurrentMap = mLevel.getCurrentMap();
   /*mPlayer.spawn(mLevel.getPlayerSpawnPosition());
-  mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());
-  mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());*/
+  mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());*/
+  mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
   mState = GameplayState::START;
 }
 /*

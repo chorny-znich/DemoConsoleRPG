@@ -114,6 +114,9 @@
     <ClCompile Include="object_manager.cpp">
       <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
+    <ClCompile Include="money.cpp">
+      <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -174,6 +177,9 @@
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
     <ClInclude Include="object_manager.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="money.h">
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
   </ItemGroup>
