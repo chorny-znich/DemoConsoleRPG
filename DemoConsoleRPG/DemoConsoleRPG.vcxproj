@@ -153,6 +153,7 @@
     <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_object.cpp" />
     <ClCompile Include="game_state.cpp" />
+    <ClCompile Include="ladder.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="location.cpp" />
     <ClCompile Include="map.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="game_object.h" />
     <ClInclude Include="game_object_type.h" />
     <ClInclude Include="game_state.h" />
+    <ClInclude Include="ladder.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="location.h" />
     <ClInclude Include="map.h" />
