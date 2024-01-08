@@ -36,8 +36,8 @@ private:
 	bool collisionDetection(GameData::Position pos, GameData::Movement move); /*
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
 	bool checkPlayerNearby(GameData::Position pos); */
-	void pickItem(); /*
-	void useLadder();*/
+	void pickItem();
+	void useLadder();
 	void showStats(Player& player);
 //	void showInventory();
 	std::string showLocationInfo();

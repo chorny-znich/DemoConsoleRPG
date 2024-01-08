@@ -4,8 +4,8 @@
 #include <format> /*
 #include "game_data.h"
 /*#include "map_symbols.h"*/ 
-#include "money.h" /*
-#include "ladder.h"
+#include "money.h"
+#include "ladder.h"/*
 #include "potion.h"
 #include "game_object.h"
 #include "entity.h"
@@ -52,10 +52,10 @@ void ExploreScreen::inputHandler()
     }
     else if (cmd == "pick") {
       pickItem();
-    } /*
+    }
     else if (cmd == "go") {
       useLadder();
-    }*/
+    }
     else if (cmd == "hero") {
       showStats(mPlayer);
     }/*
@@ -237,7 +237,7 @@ void ExploreScreen::pickItem()
     mConsoleHUD.setBottomHUD(std::format("Nothing to pick up here"), 1);
   } 
 }
-/*
+
 void ExploreScreen::useLadder()
 {
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
@@ -256,7 +256,7 @@ void ExploreScreen::useLadder()
     mConsoleHUD.setBottomHUD(std::format("There is no ladder here"), 1);
   }
 }
-*/ 
+ 
 void ExploreScreen::showStats(Player& player)
 {
   ScreenManager::createScreen(GameData::Screens::PLAYER_SCREEN);
@@ -298,8 +298,8 @@ std::string ExploreScreen::showLocationInfo()
 void ExploreScreen::changeMap()
 {
   mCurrentMap = mLevel.getCurrentMap();
-  /*mPlayer.spawn(mLevel.getPlayerSpawnPosition());
-  mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());*/
+  mPlayer.spawn(mLevel.getPlayerSpawnPosition());
+  //mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());*/
   mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
   mState = GameplayState::START;
 }
