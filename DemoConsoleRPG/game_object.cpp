@@ -1,7 +1,9 @@
 #include "game_object.h"
 
-GameObject::GameObject(GameObjectType type) :
-  mType{ type }
+GameObject::GameObject(GameObjectType type, GameObjectSubType subType) :
+  mSymbol{},
+  mType{ type },
+  mSubType{subType}
 {
 }
 
@@ -13,6 +15,16 @@ void GameObject::setType(GameObjectType type)
 GameObjectType GameObject::getType() const
 {
     return mType;
+}
+
+void GameObject::setSubType(GameObjectSubType subType)
+{
+  mSubType = subType;
+}
+
+GameObjectSubType GameObject::getSubType() const
+{
+  return mSubType;
 }
 
 void GameObject::setPosition(GameData::Position pos)
