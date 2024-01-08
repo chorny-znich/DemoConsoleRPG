@@ -4,7 +4,7 @@
 #include <format> /*
 #include "game_data.h"
 /*#include "map_symbols.h"*/ 
-/*#include "money.h"
+#include "money.h" /*
 #include "ladder.h"
 #include "potion.h"
 #include "game_object.h"
@@ -49,10 +49,10 @@ void ExploreScreen::inputHandler()
     else if (cmd == "south") {
       mPlayer.moveSouth();
       mPlayer.moving(true);
-    } /*
+    }
     else if (cmd == "pick") {
       pickItem();
-    }
+    } /*
     else if (cmd == "go") {
       useLadder();
     }*/
@@ -210,7 +210,7 @@ bool ExploreScreen::battleDetection(GameData::Position pos, GameData::Movement m
 
   return false;
 }
-
+*/
 void ExploreScreen::pickItem()
 {
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
@@ -224,20 +224,20 @@ void ExploreScreen::pickItem()
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
-    } else if (pObject->getType() == GameObjectType::HEALING_POTION) {
+    } /*else if (pObject->getType() == GameObjectType::HEALING_POTION) {
       auto pHelaingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
       //mPlayer.increaseMoney(pMoneyObject->getAmount());
       mConsoleHUD.setBottomHUD(std::format("You pick up a healing potion"), 1);
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
-    }
+    } */
   }
   else {
     mConsoleHUD.setBottomHUD(std::format("Nothing to pick up here"), 1);
   } 
 }
-
+/*
 void ExploreScreen::useLadder()
 {
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
@@ -274,19 +274,19 @@ std::string ExploreScreen::showLocationInfo()
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
   Location& location = mCurrentMap.getCurrentLocation(currentPlayerLocation);
   if (location.isObject()) {
-  /*  try {
+    try {
       std::shared_ptr<GameObject> pObject = mObjectManager.getObject(currentPlayerLocation);
       if (pObject->getType() == GameObjectType::MONEY) {
         auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
         result = std::format("You see ${}", pMoneyObject->getAmount());
-      }
+      } /*
       else if (pObject->getType() == GameObjectType::POTION) {
         result = std::format("You see a potion");
-      }
+      }*/
     }
     catch (std::runtime_error re) {
       std::cout << std::format("{} in showLocationInfo()\n", re.what());
-    } */  
+    }  
   }
   else {
     result = std::format("Nothing is interesting here");
