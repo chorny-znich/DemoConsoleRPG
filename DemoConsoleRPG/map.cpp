@@ -75,7 +75,7 @@ void Map::clearEnemy(GameData::Position pos)
 {
   mLocationMap[pos.second * mMapSize.x + pos.first].setEnemy(false);
 }
-*/ /*
+*/
 void Map::setObjects(const std::vector<std::shared_ptr<GameObject>>& objects)
 {
   for (const auto& object : objects) {
@@ -88,7 +88,7 @@ void Map::clearObject(GameData::Position pos)
 {
   mLocationMap[pos.second * mMapSize.x + pos.first].setObject(false);
 }
-*/
+
 void Map::createMap(const std::string& filename)
 {  
   loadMap(filename);  

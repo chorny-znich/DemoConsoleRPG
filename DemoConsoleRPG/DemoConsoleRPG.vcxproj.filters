@@ -111,6 +111,9 @@
     <ClCompile Include="game_object.cpp">
       <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
+    <ClCompile Include="object_manager.cpp">
+      <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -168,6 +171,9 @@
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
     <ClInclude Include="game_object_type.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="object_manager.h">
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
   </ItemGroup>
