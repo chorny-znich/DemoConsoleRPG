@@ -123,6 +123,9 @@
     <ClCompile Include="potion.cpp">
       <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
+    <ClCompile Include="inventory.cpp">
+      <Filter>Исходные файлы\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -193,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="potion.h">
       <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
