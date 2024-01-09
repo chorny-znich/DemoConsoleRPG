@@ -279,10 +279,10 @@ std::string ExploreScreen::showLocationInfo()
       if (pObject->getType() == GameObjectType::MONEY) {
         auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
         result = std::format("You see ${}", pMoneyObject->getAmount());
-      } /*
+      }
       else if (pObject->getType() == GameObjectType::POTION) {
         result = std::format("You see a potion");
-      }*/
+      }
     }
     catch (std::runtime_error re) {
       std::cout << std::format("{} in showLocationInfo()\n", re.what());

@@ -1,7 +1,7 @@
 #include "object_manager.h"
 #include "money.h"
 #include "ladder.h"
-//#include "potion.h"
+#include "potion.h"
 #include "map_symbols.h"
 #include <unordered_map>
 #include <algorithm>
@@ -16,7 +16,7 @@ void ObjectManager::createObjects(const std::string& filename)
   ini::Section section = doc.GetSection("general");
   objects.insert({ "money", std::stoul(section.at("Money_amount")) });
   objects.insert({"ladder", std::stoul(section.at("Ladder_amount"))});
-//  objects.insert({ "potion", std::stoul(section.at("Potion_amount")) });
+  objects.insert({ "potion", std::stoul(section.at("Potion_amount")) });
   // Create money objects
   for (size_t i{1}; i <= objects.at("money"); i++) {
     std::shared_ptr<Money> pMoney = std::make_shared<Money>();
@@ -39,7 +39,7 @@ void ObjectManager::createObjects(const std::string& filename)
     mObjects.push_back(std::move(pLadder));
   }
   // Create potion objects
-/*  for (size_t i{1}; i <= objects.at("potion"); i++) {
+  for (size_t i{1}; i <= objects.at("potion"); i++) {
     std::shared_ptr<Potion> pPotion = std::make_shared<Potion>();
     std::string sectionName = "potion_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
@@ -48,7 +48,7 @@ void ObjectManager::createObjects(const std::string& filename)
     }
     pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
     mObjects.push_back(std::move(pPotion));
-  }*/
+  }
 }
 /*
 std::vector<GameData::Position> ObjectManager::getObjectPositions() const

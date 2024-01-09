@@ -120,6 +120,9 @@
     <ClCompile Include="ladder.cpp">
       <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
+    <ClCompile Include="potion.cpp">
+      <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -186,6 +189,9 @@
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
     <ClInclude Include="ladder.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="potion.h">
       <Filter>Файлы заголовков\Object</Filter>
     </ClInclude>
   </ItemGroup>
