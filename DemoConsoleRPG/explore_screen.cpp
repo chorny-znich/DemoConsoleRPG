@@ -5,8 +5,8 @@
 #include "game_data.h"
 /*#include "map_symbols.h"*/ 
 #include "money.h"
-#include "ladder.h"/*
-#include "potion.h"
+#include "ladder.h"
+#include "potion.h"/*
 #include "game_object.h"
 #include "entity.h"
 #include "battle.h" */
@@ -224,14 +224,16 @@ void ExploreScreen::pickItem()
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
-    } /*else if (pObject->getType() == GameObjectType::HEALING_POTION) {
-      auto pHelaingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
-      //mPlayer.increaseMoney(pMoneyObject->getAmount());
-      mConsoleHUD.setBottomHUD(std::format("You pick up a healing potion"), 1);
-      location.setObject(false);
-      mObjectManager.destroyObject(currentPlayerLocation);
-      location.setSymbol(' ');
-    } */
+    } else if (pObject->getType() == GameObjectType::POTION) {
+        if (pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
+          auto pHealingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
+          //mPlayer.increaseMoney(pMoneyObject->getAmount());
+          mConsoleHUD.setBottomHUD(std::format("You pick up a healing potion"), 1);
+          location.setObject(false);
+          mObjectManager.destroyObject(currentPlayerLocation);
+          location.setSymbol(' ');
+        }
+    } 
   }
   else {
     mConsoleHUD.setBottomHUD(std::format("Nothing to pick up here"), 1);

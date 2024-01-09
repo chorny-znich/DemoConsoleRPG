@@ -44,7 +44,8 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "potion_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "HEALING_POTION") {
-      std::shared_ptr<HealingPotion> pPotion = std::dynamic_pointer_cast<HealingPotion>(pPotion);
+      pPotion = std::static_pointer_cast<HealingPotion>(pPotion);
+      pPotion->setSubType(GameObjectSubType::HEALING_POTION);
     }
     pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
     mObjects.push_back(std::move(pPotion));
