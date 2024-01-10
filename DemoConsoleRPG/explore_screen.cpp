@@ -15,7 +15,7 @@
 
 ExploreScreen::ExploreScreen() :
   mCurrentMap{0},
-  mStats{mPlayer/*, mInventory*/ }
+  mStats{ mPlayer, mInventory }
 {}
 
 void ExploreScreen::init()
@@ -58,10 +58,10 @@ void ExploreScreen::inputHandler()
     }
     else if (cmd == "hero") {
       showStats(mPlayer);
-    }/*
+    }
     else if (cmd == "bag") {
       showInventory();
-    } */
+    }
     mState = GameplayState::PLAYER_TURN;
   }
 }
@@ -227,7 +227,7 @@ void ExploreScreen::pickItem()
     } else if (pObject->getType() == GameObjectType::POTION) {
         if (pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
           auto pHealingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
-          //mPlayer.increaseMoney(pMoneyObject->getAmount());
+          mInventory.add(pHealingPotionObject);
           mConsoleHUD.setBottomHUD(std::format("You pick up a healing potion"), 1);
           location.setObject(false);
           mObjectManager.destroyObject(currentPlayerLocation);
@@ -263,12 +263,12 @@ void ExploreScreen::showStats(Player& player)
 {
   ScreenManager::createScreen(GameData::Screens::PLAYER_SCREEN);
 }
-/*
+
 void ExploreScreen::showInventory()
 {
   ScreenManager::createScreen(GameData::Screens::INVENTORY_SCREEN);
 }
-*/
+
 std::string ExploreScreen::showLocationInfo()
 {
   std::string result{};

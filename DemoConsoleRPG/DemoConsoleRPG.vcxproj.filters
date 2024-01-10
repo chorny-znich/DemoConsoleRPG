@@ -126,6 +126,9 @@
     <ClCompile Include="inventory.cpp">
       <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
+    <ClCompile Include="inventory_screen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -199,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="inventory.h">
       <Filter>Файлы заголовков\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory_screen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

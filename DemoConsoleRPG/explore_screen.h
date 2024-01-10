@@ -2,9 +2,9 @@
 
 #include "screen.h"
 #include "map.h"
-#include "player.h" /*
+#include "player.h"
 #include "inventory.h"
-#include "enemy_manager.h" */
+//#include "enemy_manager.h"
 #include "object_manager.h"
 #include "console_hud.h"
 #include "level.h"
@@ -24,9 +24,9 @@ private:
 	};
 	GameplayState mState{ GameplayState::START };
 	
-	Player mPlayer; /*
+	Player mPlayer;
 	Inventory mInventory;
-	EnemyManager mEnemyManager; */
+//	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager;
 	ConsoleHUD mConsoleHUD;
 	Level mLevel;
@@ -39,7 +39,7 @@ private:
 	void pickItem();
 	void useLadder();
 	void showStats(Player& player);
-//	void showInventory();
+	void showInventory();
 	std::string showLocationInfo();
 	void changeMap();
 
