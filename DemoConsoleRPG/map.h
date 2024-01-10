@@ -1,7 +1,7 @@
 #pragma once
 #include "game_data.h"
 #include "location.h"
-//#include "enemy.h"
+#include "enemy.h"
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "game_object.h"
@@ -17,8 +17,6 @@ private:
    
   sf::Vector2u mMapSize;
   
-//  std::vector<std::pair<size_t, GameData::Position>> mLaddersList; 
-  
   void loadMap(const std::string& filename);
   
 public: 
@@ -31,8 +29,8 @@ public:
   Location& getCurrentLocation(GameData::Position pos); 
   void setPlayer(GameData::Position pos); 
   void clearPlayer(GameData::Position pos);
-  /*void setEnemies(const std::vector<Enemy>& enemies);
-  void clearEnemy(GameData::Position pos);*/
+  void setEnemies(const std::vector<Enemy>& enemies);
+  void clearEnemy(GameData::Position pos);
   void setObjects(const std::vector<std::shared_ptr<GameObject>>& objects);
   void clearObject(GameData::Position pos);
 };

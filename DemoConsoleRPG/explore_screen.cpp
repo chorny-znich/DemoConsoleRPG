@@ -123,7 +123,7 @@ void ExploreScreen::update()
     mState == GameplayState::START) {
     mCurrentMap.createRenderMap();
     mCurrentMap.setObjects(mObjectManager.getObjects());
-  //  mCurrentMap.setEnemies(mEnemyManager.getEnemies());
+    mCurrentMap.setEnemies(mEnemyManager.getEnemies());
     mCurrentMap.setPlayer(mPlayer.getPosition());
     
     mConsoleHUD.setTopHud(std::string{ std::format("Name: {} exp:{} ${}", mPlayer.getName(), mPlayer.getExperience(),
@@ -301,7 +301,7 @@ void ExploreScreen::changeMap()
 {
   mCurrentMap = mLevel.getCurrentMap();
   mPlayer.spawn(mLevel.getPlayerSpawnPosition());
-  //mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());*/
+  mEnemyManager.createEnemies(mLevel.getCurrentEnemyListFilename());
   mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
   mState = GameplayState::START;
 }
