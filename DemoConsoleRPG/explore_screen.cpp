@@ -8,8 +8,8 @@
 #include "ladder.h"
 #include "potion.h"/*
 #include "game_object.h"
-#include "entity.h"
-#include "battle.h" */
+#include "entity.h"*/
+#include "battle.h"
 #include "screen_manager.h" 
 #include "game_state.h"
 
@@ -69,7 +69,7 @@ void ExploreScreen::inputHandler()
 void ExploreScreen::update()
 {
   if (mState == GameplayState::PLAYER_TURN) {
-    if (mPlayer.isMoving()) { /*
+    if (mPlayer.isMoving()) {
       if (battleDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
         Enemy& enemy{ mEnemyManager.getEnemy({ mPlayer.getPosition().first + mPlayer.getMovement().first,
           mPlayer.getPosition().second + mPlayer.getMovement().second }) };
@@ -79,7 +79,7 @@ void ExploreScreen::update()
           mCurrentMap.clearEnemy(enemy.getPosition());
         }
       }
-      else */if (!collisionDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
+      else if (!collisionDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
         mCurrentMap.clearPlayer(mPlayer.getPosition()); 
         mPlayer.update();
         mConsoleHUD.setBottomHUD("", 1);
@@ -88,7 +88,7 @@ void ExploreScreen::update()
     mConsoleHUD.setBottomHUD(showLocationInfo(), 0);
     mState = GameplayState::PLAYER_TURN_SHOW;
   } 
-  if (mState == GameplayState::ENEMY_TURN) { /*
+  if (mState == GameplayState::ENEMY_TURN) {
     std::vector<Enemy>& enemies = mEnemyManager.getEnemies();
     mConsoleHUD.setBottomHUD(std::string{ std::format("") }, 2);
     for (auto& enemy : enemies) {
@@ -115,7 +115,7 @@ void ExploreScreen::update()
           }
         }
       } 
-    } */
+    }
     mState = GameplayState::ENEMY_TURN_SHOW;
   } 
   // prepare the current map and the interface to render
@@ -150,7 +150,7 @@ void ExploreScreen::render()
     }
   }
 }
-/*
+
 bool ExploreScreen::checkPlayerNearby(GameData::Position pos)
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
@@ -176,7 +176,7 @@ bool ExploreScreen::checkPlayerNearby(GameData::Position pos)
   
   return battleStatus;
 }
-*/
+
 bool ExploreScreen::collisionDetection(GameData::Position pos, GameData::Movement move)
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
@@ -188,7 +188,7 @@ bool ExploreScreen::collisionDetection(GameData::Position pos, GameData::Movemen
   
   return false;
 }
-/*
+
 bool ExploreScreen::battleDetection(GameData::Position pos, GameData::Movement move)
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
@@ -210,7 +210,7 @@ bool ExploreScreen::battleDetection(GameData::Position pos, GameData::Movement m
 
   return false;
 }
-*/
+
 void ExploreScreen::pickItem()
 {
   GameData::Position currentPlayerLocation = mPlayer.getPosition();

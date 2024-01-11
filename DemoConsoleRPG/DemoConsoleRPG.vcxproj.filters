@@ -141,6 +141,9 @@
     <ClCompile Include="enemy_manager.cpp">
       <Filter>Исходные файлы\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="battle.cpp">
+      <Filter>Исходные файлы\RP system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="enemy_manager.h">
       <Filter>Файлы заголовков\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="battle.h">
+      <Filter>Файлы заголовков\RP system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

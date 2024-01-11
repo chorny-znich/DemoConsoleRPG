@@ -33,9 +33,9 @@ private:
 	Map mCurrentMap;
 	Stats mStats;
 	 
-	bool collisionDetection(GameData::Position pos, GameData::Movement move); /*
+	bool collisionDetection(GameData::Position pos, GameData::Movement move);
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
-	bool checkPlayerNearby(GameData::Position pos); */
+	bool checkPlayerNearby(GameData::Position pos);
 	void pickItem();
 	void useLadder();
 	void showStats(Player& player);
