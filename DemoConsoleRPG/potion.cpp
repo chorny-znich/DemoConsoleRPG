@@ -22,7 +22,6 @@ HealingPotion::HealingPotion()
 
 size_t HealingPotion::drink()
 {
-
   std::cout << "You drink the healing potion\n";
 
   return HEALING_AMOUNT;

@@ -55,6 +55,7 @@ public:
 	void setMaxHealth(size_t value);
 	size_t getMaxHealth() const;
 	void setHealth(size_t value);
+	void increaseHealth(size_t value);
 	void decreaseHealth(size_t value);
 	size_t getHealth() const;
 };

@@ -40,15 +40,13 @@ void ObjectManager::createObjects(const std::string& filename)
   }
   // Create potion objects
   for (size_t i{1}; i <= objects.at("potion"); i++) {
-    std::shared_ptr<Potion> pPotion = std::make_shared<Potion>();
     std::string sectionName = "potion_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "HEALING_POTION") {
-      pPotion = std::static_pointer_cast<HealingPotion>(pPotion);
-      pPotion->setSubType(GameObjectSubType::HEALING_POTION);
+      std::shared_ptr<HealingPotion> pPotion = std::make_shared<HealingPotion>();
+      pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      mObjects.push_back(std::move(pPotion));
     }
-    pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-    mObjects.push_back(std::move(pPotion));
   }
 }
 /*

@@ -110,6 +110,16 @@ void RPStats::setHealth(size_t value)
 	mHealth = value;
 }
 
+void RPStats::increaseHealth(size_t value)
+{
+	if (mMaxHealth >= mHealth + value) {
+		mHealth += value;
+	}
+	else {
+		mHealth = mMaxHealth;
+	}
+}
+
 void RPStats::decreaseHealth(size_t value)
 {
 	mHealth = (mHealth > value) ? mHealth - value : 0;	

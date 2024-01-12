@@ -1,8 +1,11 @@
 #include "inventory_screen.h"
 #include "stats.h"
 #include "game_state.h"
+#include "game_object_type.h"
+#include "potion.h"
 #include <iostream>
 #include <format>
+#include <string>
 
 void InventoryScreen::showInventory()
 {
@@ -28,16 +31,31 @@ void InventoryScreen::inputHandler()
   if (!mRenderScreen) {
     const size_t EXIT_NUMBER = mInventorySize + 1;
     size_t menuItem{ 0 };
+    std::string cmd{};
     std::cin >> menuItem;
-    switch (menuItem) {
-    default:
-      if (menuItem == EXIT_NUMBER) {
+
+    if (menuItem == EXIT_NUMBER) {
+      GameState::destroyScreen();
+    }
+    else if (menuItem > EXIT_NUMBER || menuItem < 1) {
+      std::cout << "Choose valid menu item\n\n";
+      mRenderScreen = true;
+    }
+    else {
+      std::cin >> cmd;
+      auto pCurrentItem = mInventory.getItem(menuItem - 1);
+      if (cmd == "drink" && pCurrentItem->getType() == GameObjectType::POTION) {
+        if (pCurrentItem->getSubType() == GameObjectSubType::HEALING_POTION) {
+          auto healingPotion = std::static_pointer_cast<HealingPotion>(pCurrentItem);
+          mPlayer.increaseHealth(healingPotion->drink());
+        }
+        mRenderScreen = true;
+        mInventory.destroyItem(menuItem - 1);
         GameState::destroyScreen();
       }
       else {
-        std::cout << "Choose valid menu item\n\n";
+        std::cout << "Enter the proper action\n\n";
         mRenderScreen = true;
-        break;
       }
     }
   }

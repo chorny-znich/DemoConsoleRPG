@@ -30,3 +30,13 @@ size_t Inventory::getSize() const
 {
     return mInventory.size();
 }
+
+std::shared_ptr<GameObject>& Inventory::getItem(size_t index)
+{
+  return mInventory.at(index);
+}
+
+void Inventory::destroyItem(size_t index)
+{
+  mInventory.erase(mInventory.begin() + index);
+}

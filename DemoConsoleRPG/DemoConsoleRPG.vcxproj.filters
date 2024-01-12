@@ -67,6 +67,9 @@
     <Filter Include="Исходные файлы\Enemy">
       <UniqueIdentifier>{332e16df-f24a-40a7-80c2-d72b0f3d3fbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Enemy">
+      <UniqueIdentifier>{320382ca-4e9a-4445-aac8-52d286beb35a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -230,5 +233,16 @@
     <ClInclude Include="battle.h">
       <Filter>Файлы заголовков\RP system</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\enemies\enemies_1.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="data\enemies\enemies_2.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="data\enemies\enemies_0.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
   </ItemGroup>
 </Project>

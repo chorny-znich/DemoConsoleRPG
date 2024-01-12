@@ -19,5 +19,5 @@ private:
 
 public:
   HealingPotion();
-  size_t drink() override;
+  virtual size_t drink() override;
 };

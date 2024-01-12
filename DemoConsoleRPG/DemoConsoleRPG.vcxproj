@@ -202,6 +202,11 @@
     <ClInclude Include="screen_manager.h" />
     <ClInclude Include="stats.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\enemies\enemies_0.txt" />
+    <Text Include="data\enemies\enemies_1.txt" />
+    <Text Include="data\enemies\enemies_2.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
