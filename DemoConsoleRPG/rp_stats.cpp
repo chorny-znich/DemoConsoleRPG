@@ -10,6 +10,11 @@ const std::string& RPStats::getName() const
 	return mName;
 }
 
+size_t RPStats::getLevel() const
+{
+	return mLevel;
+}
+
 void RPStats::setExperience(size_t exp)
 {
 	mExperience = exp;

@@ -10,10 +10,10 @@ class RPStats
 {
 protected:
 	const std::map<size_t, size_t> LevelCap{
-		{0, 0}, {1, 100}, {2, 250}, {3, 500}, {4, 1000}, {5, 2000}
+		{0, 0}, {1, 25}, {2, 100}, {3, 250}, {4, 500}, {5, 1000}
 	};
 	const std::map<size_t, std::unordered_map<std::string, size_t>> Adventurer{
-		{1, {{"attack", 1}, {"defence", 0}, {"health", 5}}},
+		{1, {{"attack", 0}, {"defence", 0}, {"health", 5}}},
 		{2, {{"attack", 0}, {"defence", 1}, {"health", 5}}},
 		{3, {{"attack", 1}, {"defence", 0}, {"health", 5}}},
 		{4, {{"attack", 0}, {"defence", 1}, {"health", 5}}},
@@ -35,6 +35,7 @@ protected:
 public:
 	void setName(const std::string& name);
 	const std::string& getName() const;
+	size_t getLevel() const;
 	void setExperience(size_t exp);
 	void increaseExperience(size_t exp);
 	size_t getExperience() const;

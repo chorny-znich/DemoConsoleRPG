@@ -1,5 +1,5 @@
 [general]
-Enemies_amount=3
+Enemies_amount=4
 
 [enemy_1]
 Name=Goblin
@@ -43,7 +43,7 @@ Experience_for_kill=15
 Health=8
 Attack=3
 Defence=8
-Damage_min=2
+Damage_min=1
 Damage_max=4
 Position_x=10
 Position_y=1
