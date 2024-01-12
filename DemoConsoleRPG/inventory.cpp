@@ -20,7 +20,7 @@ std::string Inventory::show()
     if (pObject->getType() == GameObjectType::POTION && pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
       item = "Healing potion";
     }
-    result.append(std::format("{}. {}\n", counter, item));
+    result.append(std::format("{}. {}\n", counter++, item));
   }
 
   return result;
