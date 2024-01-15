@@ -171,6 +171,7 @@
     <ClCompile Include="rp_stats.cpp" />
     <ClCompile Include="screen_manager.cpp" />
     <ClCompile Include="stats.cpp" />
+    <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="battle.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
     <ClInclude Include="stats.h" />
+    <ClInclude Include="weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\enemies\enemies_0.txt" />
