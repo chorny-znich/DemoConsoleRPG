@@ -2,6 +2,7 @@
 #include "money.h"
 #include "ladder.h"
 #include "potion.h"
+#include "weapon.h"
 #include "map_symbols.h"
 #include <unordered_map>
 #include <algorithm>
@@ -17,6 +18,7 @@ void ObjectManager::createObjects(const std::string& filename)
   objects.insert({ "money", std::stoul(section.at("Money_amount")) });
   objects.insert({"ladder", std::stoul(section.at("Ladder_amount"))});
   objects.insert({ "potion", std::stoul(section.at("Potion_amount")) });
+  objects.insert({ "weapon", std::stoul(section.at("Weapon_amount")) });
   // Create money objects
   for (size_t i{1}; i <= objects.at("money"); i++) {
     std::shared_ptr<Money> pMoney = std::make_shared<Money>();
@@ -48,17 +50,18 @@ void ObjectManager::createObjects(const std::string& filename)
       mObjects.push_back(std::move(pPotion));
     }
   }
+  // Create weapon objects
+  for (size_t i{ 1 }; i <= objects.at("weapon"); i++) {
+    std::string sectionName = "weapon_" + std::to_string(i);
+    ini::Section section = doc.GetSection(sectionName);
+    if (section.at("Type") == "WEAPON") {
+      std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
+      pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      mObjects.push_back(std::move(pWeapon));
+    }
+  }
 }
-/*
-std::vector<GameData::Position> ObjectManager::getObjectPositions() const
-{
-  std::vector<GameData::Position> objectPos;
-  /*  for (const auto& object : mObjects) {
-    objectPos.push_back(object.getPosition());
-  } */ /*
-  return objectPos;
-}
-*/
+
 const std::vector<std::shared_ptr<GameObject>>& ObjectManager::getObjects() const
 {
   return mObjects;

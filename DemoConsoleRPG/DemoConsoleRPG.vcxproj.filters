@@ -70,6 +70,9 @@
     <Filter Include="Файлы ресурсов\Enemy">
       <UniqueIdentifier>{320382ca-4e9a-4445-aac8-52d286beb35a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Object">
+      <UniqueIdentifier>{4ad76b8d-6085-41cd-b55b-9cc07351f38b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -249,6 +252,15 @@
     </Text>
     <Text Include="data\enemies\enemies_0.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="data\objects\objects_0.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="data\objects\objects_1.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="data\objects\objects_2.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
     </Text>
   </ItemGroup>
 </Project>
