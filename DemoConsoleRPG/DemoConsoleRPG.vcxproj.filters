@@ -151,7 +151,7 @@
       <Filter>Исходные файлы\RP system</Filter>
     </ClCompile>
     <ClCompile Include="weapon.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -16,11 +16,7 @@ std::string Inventory::show()
   }
   size_t counter{ 1 };
   for (auto pObject : mInventory) {
-    std::string item{};
-    if (pObject->getType() == GameObjectType::POTION && pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
-      item = "Healing potion";
-    }
-    result.append(std::format("{}. {}\n", counter++, item));
+    result.append(std::format("{}. {}\n", counter++, pObject->getName()));
   }
 
   return result;

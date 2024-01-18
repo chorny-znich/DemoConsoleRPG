@@ -27,6 +27,16 @@ GameObjectSubType GameObject::getSubType() const
   return mSubType;
 }
 
+void GameObject::setName(const std::string& name)
+{
+  mName = name;
+}
+
+std::string GameObject::getName() const
+{
+  return mName;
+}
+
 void GameObject::setPosition(GameData::Position pos)
 {
   mPosition = pos;

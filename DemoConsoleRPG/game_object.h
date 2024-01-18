@@ -2,10 +2,12 @@
 
 #include "game_object_type.h"
 #include "game_data.h"
+#include <string>
 
 class GameObject
 {
 private:
+  std::string mName;
   GameData::Position mPosition;
   char mSymbol;
 
@@ -19,6 +21,8 @@ public:
   GameObjectType getType() const;
   void setSubType(GameObjectSubType subType);
   GameObjectSubType getSubType() const;
+  void setName(const std::string& name);
+  std::string getName() const;
   void setPosition(GameData::Position pos);
   GameData::Position getPosition() const;
   void setSymbol(char symbol);

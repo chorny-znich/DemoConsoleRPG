@@ -6,7 +6,8 @@
 /*#include "map_symbols.h"*/ 
 #include "money.h"
 #include "ladder.h"
-#include "potion.h"/*
+#include "potion.h"
+#include "weapon.h"/*
 #include "game_object.h"
 #include "entity.h"*/
 #include "battle.h"
@@ -224,7 +225,8 @@ void ExploreScreen::pickItem()
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
-    } else if (pObject->getType() == GameObjectType::POTION) {
+    } 
+    else if (pObject->getType() == GameObjectType::POTION) {
         if (pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
           auto pHealingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
           mInventory.add(pHealingPotionObject);
@@ -233,7 +235,15 @@ void ExploreScreen::pickItem()
           mObjectManager.destroyObject(currentPlayerLocation);
           location.setSymbol(' ');
         }
-    } 
+    }
+    else if (pObject->getType() == GameObjectType::WEAPON) {
+      auto pWeaponObject = std::static_pointer_cast<Weapon>(pObject);
+      mInventory.add(pWeaponObject);
+      mConsoleHUD.setBottomHUD(std::format("You pick up a {}", pWeaponObject->getName()), 1);
+      location.setObject(false);
+      mObjectManager.destroyObject(currentPlayerLocation);
+      location.setSymbol(' ');
+    }
   }
   else {
     mConsoleHUD.setBottomHUD(std::format("Nothing to pick up here"), 1);
@@ -285,6 +295,7 @@ std::string ExploreScreen::showLocationInfo()
       else if (pObject->getType() == GameObjectType::POTION) {
         result = std::format("You see a potion");
       }
+      result = std::format("You see a {}", pObject->getName());
     }
     catch (std::runtime_error re) {
       std::cout << std::format("{} in showLocationInfo()\n", re.what());

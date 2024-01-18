@@ -17,6 +17,7 @@ Player_position_x=2
 Player_position_y=1
 
 [weapon_1]
+Name=Club
 Position_x=1
 Position_y=2
 Type=WEAPON
