@@ -73,6 +73,9 @@
     <Filter Include="Файлы ресурсов\Object">
       <UniqueIdentifier>{4ad76b8d-6085-41cd-b55b-9cc07351f38b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Player">
+      <UniqueIdentifier>{d41a65bb-1dab-4cf3-a89f-41b924161869}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -152,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="weapon.cpp">
       <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="equipment.cpp">
+      <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,7 +246,10 @@
       <Filter>Файлы заголовков\RP system</Filter>
     </ClInclude>
     <ClInclude Include="weapon.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="equipment.h">
+      <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +270,9 @@
     </Text>
     <Text Include="data\objects\objects_2.txt">
       <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="data\player.txt">
+      <Filter>Файлы ресурсов\Player</Filter>
     </Text>
   </ItemGroup>
 </Project>

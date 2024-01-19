@@ -16,7 +16,7 @@
 
 ExploreScreen::ExploreScreen() :
   mCurrentMap{0},
-  mStats{ mPlayer, mInventory }
+  mStats{ mPlayer, mInventory, mEquipment }
 {}
 
 void ExploreScreen::init()

@@ -3,6 +3,7 @@
 #include "game_state.h"
 #include "game_object_type.h"
 #include "potion.h"
+#include "weapon.h"
 #include <iostream>
 #include <format>
 #include <string>
@@ -14,9 +15,16 @@ void InventoryScreen::showInventory()
   std::cout << "Your action: ";
 }
 
+void InventoryScreen::showEquipment()
+{
+  std::cout << mEquipment.show();
+  mRenderScreen = true;
+}
+
 InventoryScreen::InventoryScreen() :
   mPlayer{ Stats::getPlayer() },
   mInventory{ Stats::getInventory() },
+  mEquipment{Stats::getEquipment()},
   mRenderScreen{ true },
   mInventorySize{ mInventory.getSize() }
 {
@@ -53,6 +61,12 @@ void InventoryScreen::inputHandler()
         mInventory.destroyItem(menuItem - 1);
         GameState::destroyScreen();
       }
+      else if (cmd == "equip" && pCurrentItem->getType() == GameObjectType::WEAPON) {
+        mEquipment.equip(pCurrentItem);
+        auto pWeapon = std::static_pointer_cast<Weapon>(pCurrentItem);
+        mPlayer.setDamage({ pWeapon->getDamage().x, pWeapon->getDamage().y });
+        mRenderScreen = true;
+      }
       else {
         std::cout << "Enter the proper action\n\n";
         mRenderScreen = true;
@@ -68,6 +82,7 @@ void InventoryScreen::update()
 void InventoryScreen::render()
 {
   if (mRenderScreen) {
+    showEquipment();
     showInventory();
     mRenderScreen = false;
   }

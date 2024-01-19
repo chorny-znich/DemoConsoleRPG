@@ -57,6 +57,7 @@ void ObjectManager::createObjects(const std::string& filename)
     if (section.at("Type") == "WEAPON") {
       std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
       pWeapon->setName(section.at("Name"));
+      pWeapon->setDamage({std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max"))});
       pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       mObjects.push_back(std::move(pWeapon));
     }

@@ -1,9 +1,10 @@
 #include "stats.h"
 #include <assert.h>
 
-Stats::Stats(Player& player, Inventory& inventory) :
+Stats::Stats(Player& player, Inventory& inventory, Equipment& equipment) :
   mPlayer{player},
-  mInventory{inventory}
+  mInventory{inventory},
+  mEquipment{ equipment }
 {
   assert(mpInstance == nullptr);
   mpInstance = this;
@@ -19,4 +20,10 @@ Inventory& Stats::getInventory()
 {
   auto& inventory = mpInstance->mInventory;
   return inventory;
+}
+
+Equipment& Stats::getEquipment()
+{
+  auto& equipment = mpInstance->mEquipment;
+  return equipment;
 }

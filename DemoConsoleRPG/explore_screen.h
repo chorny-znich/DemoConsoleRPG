@@ -4,6 +4,7 @@
 #include "map.h"
 #include "player.h"
 #include "inventory.h"
+#include "equipment.h"
 #include "enemy_manager.h"
 #include "object_manager.h"
 #include "console_hud.h"
@@ -26,6 +27,7 @@ private:
 	
 	Player mPlayer;
 	Inventory mInventory;
+	Equipment mEquipment;
 	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager;
 	ConsoleHUD mConsoleHUD;

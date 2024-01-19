@@ -2,6 +2,7 @@
 
 #include "player.h"
 #include "inventory.h"
+#include "equipment.h"
 #include <memory>
 
 class Stats
@@ -9,10 +10,12 @@ class Stats
 private:
   Player& mPlayer;
   Inventory& mInventory;
+  Equipment& mEquipment;
   static inline Stats* mpInstance{ nullptr };
 
 public:
-  Stats(Player& player, Inventory& inventory);
+  Stats(Player& player, Inventory& inventory, Equipment& equipment);
   static Player& getPlayer();
   static Inventory& getInventory();
+  static Equipment& getEquipment();
 };
