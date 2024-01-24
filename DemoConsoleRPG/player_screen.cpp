@@ -21,7 +21,7 @@ void PlayerScreen::showStats()
   std::cout << std::format("\t\tName: {}\n", mPlayer.getName());
   std::cout << std::format("Lvl:{}\tExp:{}\t${}\n", mPlayer.getLevel(), mPlayer.getExperience(), mPlayer.getMoney());
   std::cout << std::format("HP:{}/{}\n", mPlayer.getHealth(), mPlayer.getMaxHealth());
-  std::cout << std::format("Atk:{}\tDef:{}\n", mPlayer.getAttack(), mPlayer.getDefence());
+  std::cout << std::format("Atk:{}\tDef:{}\tArmor:{}\n", mPlayer.getAttack(), mPlayer.getDefence(), mPlayer.getArmor());
   std::cout << std::format("Dmg:{}-{}\n\n", mPlayer.getDamage().x, mPlayer.getDamage().y);
 
   std::cout << "1. Exit\n";

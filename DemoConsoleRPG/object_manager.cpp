@@ -3,6 +3,7 @@
 #include "ladder.h"
 #include "potion.h"
 #include "weapon.h"
+#include "armor.h"
 #include "map_symbols.h"
 #include <unordered_map>
 #include <algorithm>
@@ -19,6 +20,7 @@ void ObjectManager::createObjects(const std::string& filename)
   objects.insert({"ladder", std::stoul(section.at("Ladder_amount"))});
   objects.insert({ "potion", std::stoul(section.at("Potion_amount")) });
   objects.insert({ "weapon", std::stoul(section.at("Weapon_amount")) });
+  objects.insert({"armor", std::stoul(section.at("Armor_amount"))});
   // Create money objects
   for (size_t i{1}; i <= objects.at("money"); i++) {
     std::shared_ptr<Money> pMoney = std::make_shared<Money>();
@@ -60,6 +62,17 @@ void ObjectManager::createObjects(const std::string& filename)
       pWeapon->setDamage({std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max"))});
       pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       mObjects.push_back(std::move(pWeapon));
+    }
+  }
+  // Create armor objects
+  for (size_t i{ 1 }; i <= objects.at("armor"); i++) {
+    std::string sectionName = "armor_" + std::to_string(i);
+    ini::Section section = doc.GetSection(sectionName);
+    if (section.at("Type") == "ARMOR") {
+      std::shared_ptr<Armor> pArmor = std::make_shared<Armor>(std::stoul(section.at("Armor")));
+      pArmor->setName(section.at("Name"));
+      pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      mObjects.push_back(std::move(pArmor));
     }
   }
 }

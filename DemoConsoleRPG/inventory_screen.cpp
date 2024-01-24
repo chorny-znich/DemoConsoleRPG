@@ -4,6 +4,7 @@
 #include "game_object_type.h"
 #include "potion.h"
 #include "weapon.h"
+#include "armor.h"
 #include <iostream>
 #include <format>
 #include <string>
@@ -65,6 +66,12 @@ void InventoryScreen::inputHandler()
         mEquipment.equip(pCurrentItem);
         auto pWeapon = std::static_pointer_cast<Weapon>(pCurrentItem);
         mPlayer.setDamage({ pWeapon->getDamage().x, pWeapon->getDamage().y });
+        mRenderScreen = true;
+      }
+      else if (cmd == "equip" && pCurrentItem->getType() == GameObjectType::ARMOR) {
+        mEquipment.equip(pCurrentItem);
+        auto pArmor = std::static_pointer_cast<Armor>(pCurrentItem);
+        mPlayer.setArmor({ pArmor->getArmor() });
         mRenderScreen = true;
       }
       else {

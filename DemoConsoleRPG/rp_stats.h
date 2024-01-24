@@ -27,6 +27,7 @@ protected:
 	size_t mAttack{ 0 };
 	size_t mDefence{ 0 };
 	sf::Vector2u mDamage{ 0, 0 };
+	size_t mArmor{ 0 };
 	size_t mMaxHealth{ 30 };
 	size_t mHealth{ 30 };
 	//GameData::RPClass mClass{ GameData::RPClass::Adventurer };
@@ -53,6 +54,8 @@ public:
 	void setDamage(sf::Vector2u dmg);
 	sf::Vector2u getDamage() const;
 	size_t getDamageValue() const;
+	void setArmor(size_t armor);
+	size_t getArmor() const;
 	void setMaxHealth(size_t value);
 	size_t getMaxHealth() const;
 	void setHealth(size_t value);

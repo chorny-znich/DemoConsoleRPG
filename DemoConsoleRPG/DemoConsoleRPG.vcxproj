@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="armor.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="console_hud.cpp" />
     <ClCompile Include="DemoConsoleRPG.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="armor.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="console_hud.h" />
     <ClInclude Include="enemy.h" />
@@ -210,6 +212,9 @@
     <Text Include="data\enemies\enemies_0.txt" />
     <Text Include="data\enemies\enemies_1.txt" />
     <Text Include="data\enemies\enemies_2.txt" />
+    <Text Include="data\maps\map_0.txt" />
+    <Text Include="data\maps\map_1.txt" />
+    <Text Include="data\maps\map_2.txt" />
     <Text Include="data\objects\objects_0.txt" />
     <Text Include="data\objects\objects_1.txt" />
     <Text Include="data\objects\objects_2.txt" />

@@ -4,11 +4,13 @@ enum class GameObjectType {
   MONEY,
   LADDER,
   POTION,
-  WEAPON
+  WEAPON,
+  ARMOR
 };
 
 enum class GameObjectSubType {
   NONE,
   HEALING_POTION,
-  SWORD
+  SWORD,
+  CHEST
 };

@@ -7,6 +7,9 @@ void Equipment::equip(std::shared_ptr<GameObject> pObject)
   if (pObject->getType() == GameObjectType::WEAPON) {
     mEquipment["Right hand"] = pObject;
   }
+  if (pObject->getType() == GameObjectType::ARMOR && pObject->getSubType() == GameObjectSubType::CHEST) {
+    mEquipment["Chest"] = pObject;
+  }
 }
 
 std::string Equipment::show() const
@@ -21,6 +24,6 @@ std::string Equipment::show() const
       result.append(std::format("{} -", first));
     }
   }
-  result.append("\n");
+  result.append("\n\n");
   return result;
 }

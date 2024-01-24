@@ -2,7 +2,8 @@
 Money_amount=7
 Ladder_amount=2
 Potion_amount=1
-Weapon_amount=0
+Weapon_amount=1
+Armor_amount=1
 
 [money_1]
 Position_x=12
@@ -52,3 +53,18 @@ Player_position_y=1
 Position_x=7
 Position_y=3
 Type=HEALING_POTION
+
+[weapon_1]
+Name=Rusty sword
+Damage_min=2
+Damage_max=6
+Position_x=5
+Position_y=12
+Type=WEAPON
+
+[armor_1]
+Name=Woven jacket
+Armor=1
+Position_x=16
+Position_y=7
+Type=ARMOR

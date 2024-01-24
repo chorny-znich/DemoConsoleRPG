@@ -100,6 +100,16 @@ size_t RPStats::getDamageValue() const
 	return dr::EngineUtility::getRandomInRange(mDamage.x, mDamage.y);
 }
 
+void RPStats::setArmor(size_t armor)
+{
+	mArmor = armor;
+}
+
+size_t RPStats::getArmor() const
+{
+	return mArmor;
+}
+
 void RPStats::setMaxHealth(size_t value)
 {
 	mMaxHealth = value;
