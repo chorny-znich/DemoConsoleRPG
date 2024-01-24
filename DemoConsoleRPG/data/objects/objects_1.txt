@@ -3,6 +3,7 @@ Money_amount=3
 Ladder_amount=2
 Potion_amount=1
 Weapon_amount=0
+Armor_amount=0
 
 [money_1]
 Position_x=5
