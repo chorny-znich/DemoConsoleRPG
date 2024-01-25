@@ -10,6 +10,7 @@ Position_x=2
 Position_y=1
 
 [ladder_1]
+Name=Ladder
 Position_x=3
 Position_y=3
 Direction_to=DOWN

@@ -34,6 +34,7 @@ Position_x=11
 Position_y=13
 
 [ladder_1]
+Name=Ladder
 Position_x=9
 Position_y=1
 Direction_to=DOWN
@@ -42,6 +43,7 @@ Player_position_x=1
 Player_position_y=1
 
 [ladder_2]
+Name=Ladder
 Position_x=26
 Position_y=14
 Direction_to=UP
@@ -50,6 +52,7 @@ Player_position_x=9
 Player_position_y=1
 
 [potion_1]
+Name=Healing potion
 Position_x=7
 Position_y=3
 Type=HEALING_POTION

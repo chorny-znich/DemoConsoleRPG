@@ -34,6 +34,7 @@ void ObjectManager::createObjects(const std::string& filename)
     std::shared_ptr<Ladder> pLadder = std::make_shared<Ladder>();
     std::string sectionName = "ladder_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
+    pLadder->setName(section.at("Name"));
     pLadder->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
     std::string ladderDirection = section.at("Direction_to");
     char symbol = ladderDirection == "UP" ? MapSymbols::LADDER_UP : MapSymbols::LADDER_DOWN;
@@ -48,6 +49,7 @@ void ObjectManager::createObjects(const std::string& filename)
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "HEALING_POTION") {
       std::shared_ptr<HealingPotion> pPotion = std::make_shared<HealingPotion>();
+      pPotion->setName(section.at("Name"));
       pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       mObjects.push_back(std::move(pPotion));
     }

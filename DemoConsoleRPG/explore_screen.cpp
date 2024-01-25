@@ -281,7 +281,7 @@ void ExploreScreen::showInventory()
 
 std::string ExploreScreen::showLocationInfo()
 {
-  std::string result{};
+  std::string result{"You see "};
 
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
   Location& location = mCurrentMap.getCurrentLocation(currentPlayerLocation);
@@ -290,19 +290,18 @@ std::string ExploreScreen::showLocationInfo()
       std::shared_ptr<GameObject> pObject = mObjectManager.getObject(currentPlayerLocation);
       if (pObject->getType() == GameObjectType::MONEY) {
         auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
-        result = std::format("You see ${}", pMoneyObject->getAmount());
+        result += std::format("${}", pMoneyObject->getAmount());
       }
-      else if (pObject->getType() == GameObjectType::POTION) {
-        result = std::format("You see a potion");
+      else {
+        result += std::format("a {}", pObject->getName());
       }
-      result = std::format("You see a {}", pObject->getName());
     }
     catch (std::runtime_error re) {
       std::cout << std::format("{} in showLocationInfo()\n", re.what());
     }  
   }
   else {
-    result = std::format("Nothing is interesting here");
+    result += std::format(" nothing interesting here");
   }
   
   return result;
