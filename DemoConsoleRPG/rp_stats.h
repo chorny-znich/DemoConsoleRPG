@@ -1,3 +1,5 @@
+// The roleplay system
+// version 1
 #pragma once
 
 #include <string>

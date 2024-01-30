@@ -5,7 +5,8 @@ enum class GameObjectType {
   LADDER,
   POTION,
   WEAPON,
-  ARMOR
+  ARMOR,
+  DOOR
 };
 
 enum class GameObjectSubType {

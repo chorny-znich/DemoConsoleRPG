@@ -150,6 +150,7 @@
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="console_hud.cpp" />
     <ClCompile Include="DemoConsoleRPG.cpp" />
+    <ClCompile Include="door.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemy_manager.cpp" />
     <ClCompile Include="engine.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="armor.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="console_hud.h" />
+    <ClInclude Include="door.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_manager.h" />
     <ClInclude Include="engine.h" />

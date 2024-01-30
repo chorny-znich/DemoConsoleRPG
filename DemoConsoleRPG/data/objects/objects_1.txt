@@ -4,17 +4,18 @@ Ladder_amount=2
 Potion_amount=1
 Weapon_amount=0
 Armor_amount=0
+Door_amount=3
 
 [money_1]
 Position_x=5
 Position_y=3
 
 [money_2]
-Position_x=9
+Position_x=14
 Position_y=5
 
 [money_3]
-Position_x=12
+Position_x=14
 Position_y=1
 
 [ladder_1]
@@ -28,7 +29,7 @@ Player_position_y=1
 
 [ladder_2]
 Name=Ladder
-Position_x=10
+Position_x=8
 Position_y=1
 Direction_to=DOWN
 Map_index_to=2
@@ -40,3 +41,24 @@ Name=Healing potion
 Position_x=12
 Position_y=3
 Type=HEALING_POTION
+
+[door_1]
+Name=Door
+Position_x=3
+Position_y=3
+Status=Locked
+Type=DOOR
+
+[door_2]
+Name=Door
+Position_x=12
+Position_y=5
+Status=Locked
+Type=DOOR
+
+[door_3]
+Name=Door
+Position_x=11
+Position_y=1
+Status=Locked
+Type=DOOR

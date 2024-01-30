@@ -99,7 +99,10 @@ void Map::createMap(const std::string& filename)
       // check for passability
       if (ch == MapSymbols::WALL) {
         newLocation.setBarrier(true);
-      } 
+      }
+      else if (ch == MapSymbols::DOOR_LOCKED) {
+        newLocation.setBarrier(true);
+      }
       mLocationMap.push_back(std::move(newLocation));
     }
   } 

@@ -4,14 +4,15 @@ Ladder_amount=1
 Potion_amount=0
 Weapon_amount=1
 Armor_amount=0
+Door_amount=0
 
 [money_1]
-Position_x=2
-Position_y=1
+Position_x=4
+Position_y=2
 
 [ladder_1]
 Name=Ladder
-Position_x=3
+Position_x=5
 Position_y=3
 Direction_to=DOWN
 Map_index_to=1
@@ -22,6 +23,6 @@ Player_position_y=1
 Name=Club
 Damage_min=1
 Damage_max=5
-Position_x=1
-Position_y=2
+Position_x=3
+Position_y=1
 Type=WEAPON

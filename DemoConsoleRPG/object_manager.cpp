@@ -4,6 +4,7 @@
 #include "potion.h"
 #include "weapon.h"
 #include "armor.h"
+#include "door.h"
 #include "map_symbols.h"
 #include <unordered_map>
 #include <algorithm>
@@ -21,6 +22,7 @@ void ObjectManager::createObjects(const std::string& filename)
   objects.insert({ "potion", std::stoul(section.at("Potion_amount")) });
   objects.insert({ "weapon", std::stoul(section.at("Weapon_amount")) });
   objects.insert({"armor", std::stoul(section.at("Armor_amount"))});
+  objects.insert({ "door", std::stoul(section.at("Door_amount")) });
   // Create money objects
   for (size_t i{1}; i <= objects.at("money"); i++) {
     std::shared_ptr<Money> pMoney = std::make_shared<Money>();
@@ -75,6 +77,21 @@ void ObjectManager::createObjects(const std::string& filename)
       pArmor->setName(section.at("Name"));
       pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       mObjects.push_back(std::move(pArmor));
+    }
+  }
+  // Create door objects
+  for (size_t i{ 1 }; i <= objects.at("door"); i++) {
+    std::string sectionName = "door_" + std::to_string(i);
+    ini::Section section = doc.GetSection(sectionName);
+    if (section.at("Type") == "DOOR") {
+      std::shared_ptr<Door> pDoor = std::make_shared<Door>();
+      pDoor->setName(section.at("Name"));
+      pDoor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      if (section.at("Status") == "Locked") {
+        pDoor->setSymbol(MapSymbols::DOOR_LOCKED);
+        pDoor->setStatus(DoorStatus::LOCKED);
+      }
+      mObjects.push_back(std::move(pDoor));
     }
   }
 }
