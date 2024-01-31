@@ -4,6 +4,7 @@ Ladder_amount=2
 Potion_amount=1
 Weapon_amount=1
 Armor_amount=1
+Door_amount=1
 
 [money_1]
 Position_x=12
@@ -71,3 +72,17 @@ Armor=1
 Position_x=16
 Position_y=7
 Type=ARMOR
+
+[door_1]
+Name=Door
+Position_x=8
+Position_y=10
+Status=Locked
+Type=DOOR
+
+[door_1]
+Name=Door
+Position_x=23
+Position_y=9
+Status=Locked
+Type=DOOR
