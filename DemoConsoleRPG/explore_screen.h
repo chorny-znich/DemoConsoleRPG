@@ -40,6 +40,8 @@ private:
 	bool checkPlayerNearby(GameData::Position pos);
 	void pickItem();
 	void useLadder();
+	void checkDoors(GameData::Position pos);
+	void useDoor(std::shared_ptr<GameObject> pObject);
 	void showStats(Player& player);
 	void showInventory();
 	std::string showLocationInfo();

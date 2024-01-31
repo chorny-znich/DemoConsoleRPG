@@ -6,6 +6,7 @@
 /*#include "map_symbols.h"*/ 
 #include "money.h"
 #include "ladder.h"
+#include "door.h"
 #include "potion.h"
 #include "weapon.h"/*
 #include "game_object.h"
@@ -62,6 +63,9 @@ void ExploreScreen::inputHandler()
     }
     else if (cmd == "bag") {
       showInventory();
+    }
+    else if (cmd == "open") {
+      checkDoors(mPlayer.getPosition());
     }
     mState = GameplayState::PLAYER_TURN;
   }
@@ -266,6 +270,56 @@ void ExploreScreen::useLadder()
   }
   else {
     mConsoleHUD.setBottomHUD(std::format("There is no ladder here"), 1);
+  }
+}
+
+void ExploreScreen::checkDoors(GameData::Position pos)
+{
+  GameData::LocationMap& map = mCurrentMap.getMap();
+  const size_t RowSize = mCurrentMap.getMapSize().x;
+  size_t index = pos.second * RowSize + pos.first;
+
+  // check if the door is on the left from the playerh
+  if ((index % (RowSize) != 0) && (map.at(index - 1).isObject())) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first - 1, pos.second });
+    if (pObject->getType() == GameObjectType::DOOR) {
+      useDoor(pObject);
+    }
+  }
+  // check if the player right of the enemy
+  if ((index % (RowSize + 1) != 0) && (map.at(index + 1).isObject())) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first + 1, pos.second });
+    if (pObject->getType() == GameObjectType::DOOR) {
+      useDoor(pObject);
+    }
+  }
+  // check if the player above the enemy
+  else if ((index >= RowSize) && (map.at(index - RowSize).isPlayer())) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second - 1 });
+    if (pObject->getType() == GameObjectType::DOOR) {
+      useDoor(pObject);
+    }
+  }
+  // check if the player below the enemy
+  else if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isPlayer())) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second + 1 });
+    if (pObject->getType() == GameObjectType::DOOR) {
+      useDoor(pObject);
+    }
+  }
+}
+
+void ExploreScreen::useDoor(std::shared_ptr<GameObject> pObject)
+{
+  auto pDoor = std::static_pointer_cast<Door>(pObject);
+  Location& location = mCurrentMap.getCurrentLocation(pDoor->getPosition());
+  if (pDoor->getStatus() == DoorStatus::LOCKED) {
+    pDoor->setStatus(DoorStatus::UNLOCKED);
+    location.setBarrier(false);
+  }
+  else {
+    pDoor->setStatus(DoorStatus::LOCKED);
+    location.setBarrier(true);
   }
 }
  
