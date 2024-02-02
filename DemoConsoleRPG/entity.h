@@ -1,3 +1,6 @@
+// Base class for all entities
+// version 1
+
 #pragma once
 
 #include "game_data.h"
