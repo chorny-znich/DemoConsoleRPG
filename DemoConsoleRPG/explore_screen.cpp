@@ -102,6 +102,9 @@ void ExploreScreen::update()
         if (checkPlayerNearby(enemy.getPosition())) {
           enemy.setBattleStatus(true);
         }
+        else {
+          enemy.setBattleStatus(false);
+        }
         // enemy attack player
         if (enemy.isInBattle()) {
           Battle battle(mPlayer, enemy);
@@ -186,7 +189,8 @@ bool ExploreScreen::collisionDetection(GameData::Position pos, GameData::Movemen
 {
   GameData::LocationMap& map = mCurrentMap.getMap();
   GameData::Position newPosition{ pos.first + move.first, pos.second + move.second };
-  if (map.at(newPosition.second * mCurrentMap.getMapSize().x + newPosition.first).isBarrier()) {
+  if (map.at(newPosition.second * mCurrentMap.getMapSize().x + newPosition.first).isBarrier() || 
+    map.at(newPosition.second * mCurrentMap.getMapSize().x + newPosition.first).isEnemy()) {
     mPlayer.moving(false);
     return true;
   }

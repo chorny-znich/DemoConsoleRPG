@@ -18,10 +18,10 @@ std::string Equipment::show() const
   result.append("EQUIPMENT:\n");
   for (auto [first, second] : mEquipment) {
     if (second != nullptr) {
-      result.append(std::format("{} - {}", first, second->getName()));
+      result.append(std::format("{} - {}\n", first, second->getName()));
     }
     else {
-      result.append(std::format("{} -", first));
+      result.append(std::format("{} -\n", first));
     }
   }
   result.append("\n\n");

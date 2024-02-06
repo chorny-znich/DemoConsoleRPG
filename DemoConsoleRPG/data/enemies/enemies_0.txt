@@ -9,6 +9,6 @@ Attack=2
 Defence=6
 Damage_min=1
 Damage_max=2
-Position_x=3
+Position_x=4
 Position_y=3
 Symbol=g
