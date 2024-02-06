@@ -1,3 +1,6 @@
+// Player's statistics, inventory and equipment for using by other classes
+// version 1
+
 #pragma once
 
 #include "player.h"
