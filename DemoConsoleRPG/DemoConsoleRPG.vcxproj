@@ -221,7 +221,9 @@
     <Text Include="data\objects\objects_1.txt" />
     <Text Include="data\objects\objects_2.txt" />
     <Text Include="data\player.txt" />
+    <Text Include="enemies_3.txt" />
     <Text Include="map_3.txt" />
+    <Text Include="objects_3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

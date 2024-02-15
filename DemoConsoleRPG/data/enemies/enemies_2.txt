@@ -9,8 +9,8 @@ Attack=2
 Defence=6
 Damage_min=1
 Damage_max=2
-Position_x=5
-Position_y=5
+Position_x=20
+Position_y=12
 Symbol=g
 
 [enemy_2]
@@ -21,8 +21,8 @@ Attack=3
 Defence=8
 Damage_min=1
 Damage_max=4
-Position_x=10
-Position_y=1
+Position_x=19
+Position_y=3
 Symbol=G
 
 [enemy_3]
@@ -33,8 +33,8 @@ Attack=2
 Defence=6
 Damage_min=1
 Damage_max=2
-Position_x=5
-Position_y=5
+Position_x=13
+Position_y=13
 Symbol=g
 
 [enemy_4]
@@ -45,8 +45,8 @@ Attack=4
 Defence=7
 Damage_min=2
 Damage_max=5
-Position_x=21
-Position_y=10
+Position_x=12
+Position_y=9
 Symbol=O
 
 [enemy_5]
@@ -57,8 +57,8 @@ Attack=2
 Defence=6
 Damage_min=1
 Damage_max=2
-Position_x=9
-Position_y=3
+Position_x=10
+Position_y=5
 Symbol=g
 
 [enemy_6]
@@ -69,8 +69,8 @@ Attack=4
 Defence=7
 Damage_min=2
 Damage_max=5
-Position_x=8
-Position_y=8
+Position_x=1
+Position_y=1
 Symbol=O
 
 [enemy_7]
@@ -81,8 +81,8 @@ Attack=3
 Defence=8
 Damage_min=1
 Damage_max=4
-Position_x=10
-Position_y=1
+Position_x=3
+Position_y=11
 Symbol=G
 
 [enemy_8]
@@ -93,8 +93,8 @@ Attack=4
 Defence=7
 Damage_min=2
 Damage_max=5
-Position_x=23
-Position_y=4
+Position_x=16
+Position_y=1
 Symbol=O
 
 [enemy_9]
@@ -105,8 +105,8 @@ Attack=3
 Defence=8
 Damage_min=1
 Damage_max=4
-Position_x=10
-Position_y=1
+Position_x=9
+Position_y=4
 Symbol=G
 
 [enemy_10]
@@ -117,6 +117,6 @@ Attack=4
 Defence=7
 Damage_min=2
 Damage_max=5
-Position_x=12
-Position_y=1
+Position_x=1
+Position_y=5
 Symbol=O
