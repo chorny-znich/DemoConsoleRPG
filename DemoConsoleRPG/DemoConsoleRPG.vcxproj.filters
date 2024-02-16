@@ -159,14 +159,14 @@
     <ClCompile Include="equipment.cpp">
       <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
-    <ClCompile Include="armor.cpp">
-      <Filter>Исходные файлы\Player</Filter>
-    </ClCompile>
     <ClCompile Include="weapon.cpp">
       <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
     <ClCompile Include="door.cpp">
       <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="armor.cpp">
+      <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -260,11 +260,11 @@
     <ClInclude Include="equipment.h">
       <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
-    <ClInclude Include="armor.h">
-      <Filter>Файлы заголовков\Player</Filter>
-    </ClInclude>
     <ClInclude Include="door.h">
       <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="armor.h">
+      <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +305,12 @@
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
     <Text Include="objects_3.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="enemy_list.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="weapon_list.txt">
       <Filter>Файлы ресурсов\Object</Filter>
     </Text>
   </ItemGroup>

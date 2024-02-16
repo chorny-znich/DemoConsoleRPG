@@ -20,9 +20,9 @@ Player_position_x=2
 Player_position_y=1
 
 [weapon_1]
-Name=Club
+Name=Rusty dagger
 Damage_min=1
-Damage_max=5
+Damage_max=3
 Position_x=3
 Position_y=1
 Type=WEAPON

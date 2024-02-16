@@ -2,7 +2,7 @@
 Money_amount=3
 Ladder_amount=2
 Potion_amount=1
-Weapon_amount=0
+Weapon_amount=1
 Armor_amount=0
 Door_amount=3
 
@@ -15,7 +15,7 @@ Position_x=14
 Position_y=5
 
 [money_3]
-Position_x=14
+Position_x=6
 Position_y=1
 
 [ladder_1]
@@ -38,9 +38,17 @@ Player_position_y=14
 
 [potion_1]
 Name=Healing potion
-Position_x=12
-Position_y=3
+Position_x=14
+Position_y=1
 Type=HEALING_POTION
+
+[weapon_1]
+Name=Dagger
+Damage_min=1
+Damage_max=4
+Position_x=14
+Position_y=3
+Type=WEAPON
 
 [door_1]
 Name=Door

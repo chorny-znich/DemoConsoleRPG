@@ -8,7 +8,8 @@
 #include "ladder.h"
 #include "door.h"
 #include "potion.h"
-#include "weapon.h"/*
+#include "weapon.h"
+#include "armor.h"/*
 #include "game_object.h"
 #include "entity.h"*/
 #include "battle.h"
@@ -252,6 +253,14 @@ void ExploreScreen::pickItem()
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
     }
+    else if (pObject->getType() == GameObjectType::ARMOR) {
+      auto pArmorObject = std::static_pointer_cast<Armor>(pObject);
+      mInventory.add(pArmorObject);
+      mConsoleHUD.setBottomHUD(std::format("You pick up a {}", pArmorObject->getName()), 1);
+      location.setObject(false);
+      mObjectManager.destroyObject(currentPlayerLocation);
+      location.setSymbol(' ');
+    }
   }
   else {
     mConsoleHUD.setBottomHUD(std::format("Nothing to pick up here"), 1);
@@ -283,29 +292,29 @@ void ExploreScreen::checkDoors(GameData::Position pos)
   const size_t RowSize = mCurrentMap.getMapSize().x;
   size_t index = pos.second * RowSize + pos.first;
 
-  // check if the door is on the left from the playerh
+  // check if the door is on the left from the player
   if ((index % (RowSize) != 0) && (map.at(index - 1).isObject())) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first - 1, pos.second });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
-  // check if the player right of the enemy
+  // check if the player right of the door
   if ((index % (RowSize + 1) != 0) && (map.at(index + 1).isObject())) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first + 1, pos.second });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
-  // check if the player above the enemy
-  else if ((index >= RowSize) && (map.at(index - RowSize).isPlayer())) {
+  // check if the player above the door
+  if ((index >= RowSize) && (map.at(index - RowSize).isPlayer())) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second - 1 });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
-  // check if the player below the enemy
-  else if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isPlayer())) {
+  // check if the player below the door
+  if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isPlayer())) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second + 1 });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);

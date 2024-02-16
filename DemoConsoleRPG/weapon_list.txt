@@ -1,0 +1,31 @@
+The list of the weapons
+
+Name=Rusty dagger
+Damage_min=1
+Damage_max=3
+Position_x=
+Position_y=
+Type=WEAPON
+
+Name=Dagger
+Damage_min=1
+Damage_max=4
+Position_x=
+Position_y=
+Type=WEAPON
+
+Name=Club
+Damage_min=1
+Damage_max=5
+Position_x=
+Position_y=
+Type=WEAPON
+
+
+
+Name=Rusty sword
+Damage_min=2
+Damage_max=6
+Position_x=5
+Position_y=12
+Type=WEAPON

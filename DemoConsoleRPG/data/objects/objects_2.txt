@@ -1,10 +1,10 @@
 [general]
-Money_amount=7
+Money_amount=9
 Ladder_amount=2
 Potion_amount=1
-Weapon_amount=1
+Weapon_amount=2
 Armor_amount=1
-Door_amount=3
+Door_amount=6
 
 [money_1]
 Position_x=12
@@ -34,6 +34,14 @@ Position_y=12
 Position_x=11
 Position_y=13
 
+[money_8]
+Position_x=24
+Position_y=7
+
+[money_9]
+Position_x=22
+Position_y=5
+
 [ladder_1]
 Name=Ladder
 Position_x=9
@@ -59,18 +67,26 @@ Position_y=3
 Type=HEALING_POTION
 
 [weapon_1]
-Name=Rusty sword
-Damage_min=2
-Damage_max=6
+Name=Dagger
+Damage_min=1
+Damage_max=4
 Position_x=5
 Position_y=12
+Type=WEAPON
+
+[weapon_2]
+Name=Club
+Damage_min=1
+Damage_max=5
+Position_x=1
+Position_y=8
 Type=WEAPON
 
 [armor_1]
 Name=Woven jacket
 Armor=1
-Position_x=25
-Position_y=7
+Position_x=26
+Position_y=9
 Type=ARMOR
 
 [door_1]
@@ -91,5 +107,26 @@ Type=DOOR
 Name=Door
 Position_x=4
 Position_y=2
+Status=Locked
+Type=DOOR
+
+[door_4]
+Name=Door
+Position_x=1
+Position_y=13
+Status=Locked
+Type=DOOR
+
+[door_5]
+Name=Door
+Position_x=7
+Position_y=7
+Status=Locked
+Type=DOOR
+
+[door_6]
+Name=Door
+Position_x=10
+Position_y=9
 Status=Locked
 Type=DOOR

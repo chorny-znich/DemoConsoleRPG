@@ -91,6 +91,10 @@ void ObjectManager::createObjects(const std::string& filename)
         pDoor->setSymbol(MapSymbols::DOOR_LOCKED);
         pDoor->setStatus(DoorStatus::LOCKED);
       }
+      else {
+        pDoor->setSymbol(MapSymbols::DOOR_UNLOCKED);
+        pDoor->setStatus(DoorStatus::UNLOCKED);
+      }
       mObjects.push_back(std::move(pDoor));
     }
   }
