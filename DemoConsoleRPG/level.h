@@ -8,7 +8,7 @@
 class Level
 {
 private:
-  const size_t NUMBER_OF_MAPS = 3;
+  const size_t NUMBER_OF_MAPS = 4;
   size_t mCurrentMapIndex{ 0 };
   std::unordered_map<size_t, Map> mMaps;
   std::unordered_map<size_t, std::string> mEnemyList;

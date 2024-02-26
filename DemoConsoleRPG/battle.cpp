@@ -58,7 +58,7 @@ std::string Battle::enemyAttack()
       damageToPlayer = 0;
     }
 
-    if (mPlayer.getHealth() == 0) {
+    if (mPlayer.getHealth() <= 0) {
       str += std::format("You took {} points of damage. You killed by {}", damageToPlayer, mEnemy.getName());
       mEnemy.setBattleStatus(false);
     }

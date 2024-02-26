@@ -182,30 +182,6 @@ Position_y=2
 Symbol=O
 
 [enemy_16]
-Name=Big orc
-Experience_for_kill=45
-Health=14
-Attack=6
-Defence=8
-Damage_min=2
-Damage_max=7
-Position_x=15
-Position_y=2
-Symbol=O
-
-[enemy_16]
-Name=Big orc
-Experience_for_kill=45
-Health=14
-Attack=6
-Defence=8
-Damage_min=2
-Damage_max=7
-Position_x=26
-Position_y=1
-Symbol=O
-
-[enemy_17]
 Name=Big skeleton
 Experience_for_kill=35
 Health=12
@@ -217,7 +193,7 @@ Position_x=26
 Position_y=1
 Symbol=S
 
-[enemy_18]
+[enemy_17]
 Name=Orc
 Experience_for_kill=25
 Health=10

@@ -38,13 +38,7 @@ void Engine::render()
     mGameState.getCurrent()->render();
   } 
 }
-/*
-void Engine::update() {
-  collisionDetection(mPlayer.getPosition(), mPlayer.getMovement());
-  mPlayer.update(mCurrentMap.getMap());
-  prepareInterface();
-}
-*/ 
+
 void Engine::run() 
 {
   init();
@@ -58,28 +52,3 @@ void Engine::run()
   system("cls");
   std::cout << std::format("The game is over\n");
 }
-/*
-void Engine::collisionDetection(Position pos, Movement move) {
-  GameMap& map = mCurrentMap.getMap();
-  Position newPosition{ pos.first + move.first, pos.second + move.second };
-  if (map[newPosition.second][newPosition.first] == '#') {
-    mPlayer.moving(false);
-  }
-  else {
-    mPlayer.moving(true);
-  }
-
-  if (map[newPosition.second][newPosition.first] == GOLD_ITEM) {
-    mPlayer.moving(true);
-    map[newPosition.second][newPosition.first] = mCoin.getTerrain();
-    std::string message{ "You pick coins" };
-    PlayerInterface::setMessage(message, 0);
-  }
-}
-
-void Engine::prepareInterface() {
-  std::string playerPosition{ "Player position: (" + std::to_string(mPlayer.getPosition().first) + ", " +
-    std::to_string(mPlayer.getPosition().second) + ")" };
-  PlayerInterface::setMessage(playerPosition, 1);
-}
-*/

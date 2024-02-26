@@ -7,9 +7,7 @@
 #include "door.h"
 #include "potion.h"
 #include "weapon.h"
-#include "armor.h"/*
-#include "game_object.h"
-#include "entity.h"*/
+#include "armor.h"
 #include "battle.h"
 #include "screen_manager.h" 
 #include "game_state.h"

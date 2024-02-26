@@ -4,7 +4,7 @@ Ladder_amount=2
 Potion_amount=2
 Weapon_amount=2
 Armor_amount=2
-Door_amount=2
+Door_amount=3
 
 [money_1]
 Position_x=2
