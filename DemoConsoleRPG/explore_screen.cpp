@@ -1,9 +1,7 @@
 #include "explore_screen.h"
 #include <iostream> 
 #include <string>
-#include <format> /*
-#include "game_data.h"
-/*#include "map_symbols.h"*/ 
+#include <format> 
 #include "money.h"
 #include "ladder.h"
 #include "door.h"
@@ -293,28 +291,28 @@ void ExploreScreen::checkDoors(GameData::Position pos)
   size_t index = pos.second * RowSize + pos.first;
 
   // check if the door is on the left from the player
-  if ((index % (RowSize) != 0) && (map.at(index - 1).isObject())) {
+  if (map.at(index - 1).isObject()) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first - 1, pos.second });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
   // check if the player right of the door
-  if ((index % (RowSize + 1) != 0) && (map.at(index + 1).isObject())) {
+  if (map.at(index + 1).isObject()) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first + 1, pos.second });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
   // check if the player above the door
-  if ((index >= RowSize) && (map.at(index - RowSize).isPlayer())) {
+  if (map.at(index - RowSize).isObject()) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second - 1 });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
     }
   }
   // check if the player below the door
-  if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isPlayer())) {
+  if (map.at(index + RowSize).isObject()) {
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second + 1 });
     if (pObject->getType() == GameObjectType::DOOR) {
       useDoor(pObject);
@@ -382,8 +380,3 @@ void ExploreScreen::changeMap()
   mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
   mState = GameplayState::START;
 }
-/*
-Player& ExploreScreen::getCurrentPlayer()
-{
-  return mPlayer;
-} */
