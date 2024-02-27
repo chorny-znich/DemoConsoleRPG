@@ -298,9 +298,6 @@
     <Text Include="data\maps\map_2.txt">
       <Filter>Файлы ресурсов\Map</Filter>
     </Text>
-    <Text Include="map_3.txt">
-      <Filter>Файлы ресурсов\Map</Filter>
-    </Text>
     <Text Include="enemies_3.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
