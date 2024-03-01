@@ -10,6 +10,7 @@ void Level::init()
 
     mEnemyList.insert({ i, std::format("data/enemies/enemies_{}.txt", i)});
     mObjectList.insert({ i, std::format("data/objects/objects_{}.txt", i) });
+    mNPCList.insert({ i, std::format("data/npc/npc_{}.txt", i) });
   }
 }
 
@@ -26,6 +27,11 @@ const std::string& Level::getCurrentEnemyListFilename() const
 const std::string& Level::getCurrentObjectListFilename() const
 {
   return mObjectList.at(mCurrentMapIndex);
+}
+
+const std::string& Level::getCurrentNPCListFilename() const
+{
+  return mNPCList.at(mCurrentMapIndex);
 }
 
 void Level::setPlayerSpawnPosition(GameData::Position pos)

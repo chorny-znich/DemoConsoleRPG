@@ -7,6 +7,7 @@
 #include "equipment.h"
 #include "enemy_manager.h"
 #include "object_manager.h"
+#include "npc_manager.h"
 #include "console_hud.h"
 #include "level.h"
 #include "stats.h"
@@ -30,6 +31,7 @@ private:
 	Equipment mEquipment;
 	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager;
+	NPCManager mNPCManager;
 	ConsoleHUD mConsoleHUD;
 	Level mLevel;
 	Map mCurrentMap;
@@ -54,5 +56,4 @@ public:
 	void inputHandler() override;
 	void update() override;
 	void render() override;
-	//Player& getCurrentPlayer();
 };

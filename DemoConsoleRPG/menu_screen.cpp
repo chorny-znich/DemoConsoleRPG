@@ -7,7 +7,7 @@
 
 void MenuScreen::showMainMenu()
 {
-  std::cout << "Console RPG ver 0.1.0\n\n";
+  std::cout << "Console RPG ver 0.2.0\n\n";
   std::cout << "1. Play\n" << "2. Exit\n\n";
   std::cout << "Your action: ";
 }

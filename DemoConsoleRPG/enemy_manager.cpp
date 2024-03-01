@@ -1,5 +1,4 @@
 #include "enemy_manager.h"
-//#include <algorithm>
 #include <DisRealityGF.h>
 
 void EnemyManager::createEnemies(const std::string& filename)
@@ -26,16 +25,7 @@ void EnemyManager::createEnemies(const std::string& filename)
     mEnemies.push_back(std::move(enemy));
   }
 }
-/*
-std::vector<GameData::Position> EnemyManager::getEnemyPositions() const
-{
-  std::vector<GameData::Position> enemyPos;
-  for (const auto& enemy : mEnemies) {
-    enemyPos.push_back(enemy.getPosition());
-  }
-  return enemyPos;
-}
-*/
+
 const std::vector<Enemy>& EnemyManager::getEnemies() const
 {
     return mEnemies;

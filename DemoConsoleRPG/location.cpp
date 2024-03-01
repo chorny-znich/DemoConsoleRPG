@@ -47,3 +47,8 @@ bool Location::isObject() const
 {
   return mObject;
 }
+
+void Location::setNPC(bool value)
+{
+  mNPC = value;
+}

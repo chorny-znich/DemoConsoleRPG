@@ -89,6 +89,14 @@ void Map::clearObject(GameData::Position pos)
   mLocationMap[pos.second * mMapSize.x + pos.first].setObject(false);
 }
 
+void Map::setNPCs(const std::vector<NPC>& npcs)
+{
+  for (const auto& npc : npcs) {
+    mRenderMap[npc.getPosition().second][npc.getPosition().first] = npc.getSymbol();
+    mLocationMap[npc.getPosition().second * mMapSize.x + npc.getPosition().first].setNPC(true);
+  }
+}
+
 void Map::createMap(const std::string& filename)
 {  
   loadMap(filename);  

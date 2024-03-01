@@ -1,0 +1,8 @@
+[general]
+NPC_amount=1
+
+[npc_1]
+Name=Trader
+Position_x=5
+Position_y=1
+Symbol=T

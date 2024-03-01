@@ -13,6 +13,7 @@ private:
   std::unordered_map<size_t, Map> mMaps;
   std::unordered_map<size_t, std::string> mEnemyList;
   std::unordered_map<size_t, std::string> mObjectList; 
+  std::unordered_map<size_t, std::string> mNPCList;
   GameData::Position mPlayerSpawnPosition{1, 1};
 
 public:
@@ -20,6 +21,7 @@ public:
   Map& getCurrentMap();
   const std::string& getCurrentEnemyListFilename() const;
   const std::string& getCurrentObjectListFilename() const;
+  const std::string& getCurrentNPCListFilename() const;
   void setPlayerSpawnPosition(GameData::Position);
   GameData::Position getPlayerSpawnPosition();
   void setCurrentMapIndex(size_t index);

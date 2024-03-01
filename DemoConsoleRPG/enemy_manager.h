@@ -10,7 +10,6 @@ private:
 
 public:
   void createEnemies(const std::string& filename);
-  /*  std::vector<GameData::Position> getEnemyPositions() const;*/
   const std::vector<Enemy>& getEnemies() const;
   std::vector<Enemy>& getEnemies();
   Enemy& getEnemy(GameData::Position pos);

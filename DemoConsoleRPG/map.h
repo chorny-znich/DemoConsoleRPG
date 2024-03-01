@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "game_object.h"
-//#include "enemy_manager.h"
+#include "npc.h"
 
 class Map
 {
@@ -33,4 +33,5 @@ public:
   void clearEnemy(GameData::Position pos);
   void setObjects(const std::vector<std::shared_ptr<GameObject>>& objects);
   void clearObject(GameData::Position pos);
+  void setNPCs(const std::vector<NPC>& npcs);
 };
