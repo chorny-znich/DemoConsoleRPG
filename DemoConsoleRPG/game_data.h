@@ -18,7 +18,8 @@ namespace GameData {
     MENU_SCREEN,
     EXPLORE_SCREEN,
     PLAYER_SCREEN,
-    INVENTORY_SCREEN
+    INVENTORY_SCREEN,
+    SHOP_SCREEN
   };
 
   inline namespace path {
