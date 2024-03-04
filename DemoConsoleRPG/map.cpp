@@ -94,6 +94,7 @@ void Map::setNPCs(const std::vector<NPC>& npcs)
   for (const auto& npc : npcs) {
     mRenderMap[npc.getPosition().second][npc.getPosition().first] = npc.getSymbol();
     mLocationMap[npc.getPosition().second * mMapSize.x + npc.getPosition().first].setNPC(true);
+    mLocationMap[npc.getPosition().second * mMapSize.x + npc.getPosition().first].setBarrier(true);
   }
 }
 

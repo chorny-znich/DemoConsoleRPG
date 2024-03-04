@@ -1,6 +1,7 @@
 #include "shop_screen.h"
 #include <iostream>
 #include <format>
+#include <string>
 
 void ShopScreen::showStaff()
 {
@@ -18,6 +19,8 @@ void ShopScreen::init()
 
 void ShopScreen::inputHandler()
 {
+  std::string input;
+  std::cin >> input;
 }
 
 void ShopScreen::update()

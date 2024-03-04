@@ -11,6 +11,7 @@
 #include "console_hud.h"
 #include "level.h"
 #include "stats.h"
+#include "game_data.h"
 
 class ExploreScreen : public Screen
 {	
@@ -46,6 +47,8 @@ private:
 	void useDoor(std::shared_ptr<GameObject> pObject);
 	void showStats(Player& player);
 	void showInventory();
+	bool checkNpcNearby(GameData::Position pos);
+	void showShop();
 	std::string showLocationInfo();
 	void changeMap();
 

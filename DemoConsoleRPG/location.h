@@ -12,7 +12,7 @@ private:
   bool mPlayer{ false };
   bool mEnemy{ false };
   bool mObject{ false };
-  bool mNPC{ false };
+  bool mNpc{ false };
 
 public:
   void setSymbol(char ch);
@@ -26,4 +26,5 @@ public:
   void setObject(bool value);
   bool isObject() const;
   void setNPC(bool value);
+  bool isNpc() const;
 };

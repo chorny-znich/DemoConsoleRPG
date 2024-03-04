@@ -50,5 +50,10 @@ bool Location::isObject() const
 
 void Location::setNPC(bool value)
 {
-  mNPC = value;
+  mNpc = value;
+}
+
+bool Location::isNpc() const
+{
+    return mNpc;
 }

@@ -64,6 +64,11 @@ void ExploreScreen::inputHandler()
     else if (cmd == "open") {
       checkDoors(mPlayer.getPosition());
     }
+    else if (cmd == "trade") {
+      if (checkNpcNearby(mPlayer.getPosition())) {
+        showShop();
+      }
+    }
     mState = GameplayState::PLAYER_TURN;
   }
 }
@@ -341,6 +346,37 @@ void ExploreScreen::showStats(Player& player)
 void ExploreScreen::showInventory()
 {
   ScreenManager::createScreen(GameData::Screens::INVENTORY_SCREEN);
+}
+
+bool ExploreScreen::checkNpcNearby(GameData::Position pos)
+{
+  GameData::LocationMap& map = mCurrentMap.getMap();
+  const size_t RowSize = mCurrentMap.getMapSize().x;
+  size_t index = pos.second * RowSize + pos.first;
+  bool result{ false };
+  // check if the npc left of the player
+  if ((index % (RowSize) != 0) && (map.at(index - 1).isNpc())) {
+    result = true;
+  }
+  // check if the npc right of the player
+  else if ((index % (RowSize + 1) != 0) && (map.at(index + 1).isNpc())) {
+    result = true;
+  }
+  // check if the npc above the player
+  else if ((index >= RowSize) && (map.at(index - RowSize).isNpc())) {
+    result = true;
+  }
+  // check if the npc below the player
+  else if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isNpc())) {
+    result = true;
+  }
+
+  return result;
+}
+
+void ExploreScreen::showShop()
+{
+  ScreenManager::createScreen(GameData::Screens::SHOP_SCREEN);
 }
 
 std::string ExploreScreen::showLocationInfo()
