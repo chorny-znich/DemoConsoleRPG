@@ -1,10 +1,12 @@
 #pragma once
 
 #include "screen.h"
+#include "shop.h"
 
 class ShopScreen : public Screen
 {
 private:
+	Shop mShop;
   bool mRenderScreen;
 	void showStaff();
 

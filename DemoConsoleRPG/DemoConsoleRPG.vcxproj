@@ -175,6 +175,7 @@
     <ClCompile Include="potion.cpp" />
     <ClCompile Include="rp_stats.cpp" />
     <ClCompile Include="screen_manager.cpp" />
+    <ClCompile Include="shop.cpp" />
     <ClCompile Include="shop_screen.cpp" />
     <ClCompile Include="stats.cpp" />
     <ClCompile Include="weapon.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="rp_stats.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
+    <ClInclude Include="shop.h" />
     <ClInclude Include="shop_screen.h" />
     <ClInclude Include="stats.h" />
     <ClInclude Include="weapon.h" />

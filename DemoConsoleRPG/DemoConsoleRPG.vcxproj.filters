@@ -186,6 +186,9 @@
     <ClCompile Include="shop_screen.cpp">
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
+    <ClCompile Include="shop.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -292,6 +295,9 @@
     </ClInclude>
     <ClInclude Include="shop_screen.h">
       <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="shop.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
