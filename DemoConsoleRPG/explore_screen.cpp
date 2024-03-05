@@ -357,18 +357,22 @@ bool ExploreScreen::checkNpcNearby(GameData::Position pos)
   // check if the npc left of the player
   if ((index % (RowSize) != 0) && (map.at(index - 1).isNpc())) {
     result = true;
+    CurrentNpc::setNpc(std::make_unique<Npc>(mNpcManager.getNpc({ pos.first - 1, pos.second })));
   }
   // check if the npc right of the player
   else if ((index % (RowSize + 1) != 0) && (map.at(index + 1).isNpc())) {
+    CurrentNpc::setNpc(std::make_unique<Npc>(mNpcManager.getNpc({ pos.first + 1, pos.second })));
     result = true;
   }
   // check if the npc above the player
   else if ((index >= RowSize) && (map.at(index - RowSize).isNpc())) {
+    CurrentNpc::setNpc(std::make_unique<Npc>(mNpcManager.getNpc({ pos.first, pos.second - 1 })));
     result = true;
   }
   // check if the npc below the player
   else if ((index < mCurrentMap.getMapSize().y * RowSize - RowSize) && (map.at(index + RowSize).isNpc())) {
     result = true;
+    CurrentNpc::setNpc(std::make_unique<Npc>(mNpcManager.getNpc({ pos.first, pos.second + 1 })));
   }
 
   return result;

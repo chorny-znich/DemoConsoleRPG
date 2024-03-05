@@ -1,5 +1,6 @@
 #include "shop_screen.h"
 #include "game_state.h"
+#include "current_npc.h"
 #include <iostream>
 #include <format>
 #include <string>
@@ -12,6 +13,7 @@ void ShopScreen::showStaff()
 }
 
 ShopScreen::ShopScreen() :
+  mShop{std::move(CurrentNpc::getNpc())},
   mRenderScreen{true}
 {
 }

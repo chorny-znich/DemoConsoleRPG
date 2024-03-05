@@ -8,9 +8,11 @@
 class Shop
 {
 private:
+  std::unique_ptr<Npc> mpNpc;
   std::vector<std::shared_ptr<GameObject>> mStaff;
 
 public:
+  Shop(std::unique_ptr<Npc> pNpc);
   void add(std::shared_ptr<GameObject> pObject);
   std::string show();
   size_t getSize() const;

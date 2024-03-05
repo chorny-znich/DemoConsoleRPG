@@ -1,12 +1,21 @@
 #include "shop.h"
 
+Shop::Shop(std::unique_ptr<Npc> pNpc) :
+  mpNpc{std::move(pNpc)}
+{
+}
+
 void Shop::add(std::shared_ptr<GameObject> pObject)
 {
 }
 
 std::string Shop::show()
 {
-  return std::string();
+  std::string result;
+  result.append("\t\tSHOP\n");
+  result.append(mpNpc->getName() + '\n');
+
+  return result;
 }
 
 size_t Shop::getSize() const

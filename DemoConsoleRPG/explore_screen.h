@@ -11,6 +11,7 @@
 #include "console_hud.h"
 #include "level.h"
 #include "stats.h"
+#include "current_npc.h"
 #include "game_data.h"
 
 class ExploreScreen : public Screen
@@ -37,6 +38,7 @@ private:
 	Level mLevel;
 	Map mCurrentMap;
 	Stats mStats;
+	CurrentNpc mCurrentNpc;
 	 
 	bool collisionDetection(GameData::Position pos, GameData::Movement move);
 	bool battleDetection(GameData::Position pos, GameData::Movement move);
