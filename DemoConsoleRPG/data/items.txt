@@ -4,55 +4,59 @@ Weapon_amount=5
 Armor_amount=3
 
 [potion_1]
+Id=1
 Name=Healing potion
 Type=HEALING_POTION
 
 [weapon_1]
-Id=1
+Id=100
 Name=Rusty dagger
 Damage_min=1
 Damage_max=3
 Type=WEAPON
 
 [weapon_2]
-Id=2
+Id=101
 Name=Dagger
 Damage_min=1
 Damage_max=4
 Type=WEAPON
 
 [weapon_3]
-Id=3
+Id=102
 Name=Club
 Damage_min=1
 Damage_max=5
 Type=WEAPON
 
 [weapon_4]
-Id=4
+Id=103
 Name=Mace
 Damage_min=1
 Damage_max=6
 Type=WEAPON
 
 [weapon_5]
-Id=5
+Id=104
 Name=Old sword
 Damage_min=2
 Damage_max=8
 Type=WEAPON
 
 [armor_1]
+Id=500
 Name=Woven jacket
 Armor=1
 Type=ARMOR
 
 [armor_2]
+Id=501
 Name=Leather jacket
 Armor=2
 Type=ARMOR
 
 [armor_3]
+Id=502
 Name=Reinforced leather jacket
 Armor=3
 Type=ARMOR

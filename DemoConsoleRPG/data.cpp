@@ -25,6 +25,7 @@ void Data::init()
       HealingPotion pPotion;
       pPotion.setName(section.at("Name"));
       mPotionDatabase.insert({i, std::move(pPotion) });
+      mItemDatabase.insert({ i, std::move(pPotion) });
     }
   }
   // Create weapon objects
@@ -36,6 +37,7 @@ void Data::init()
       pWeapon.setName(section.at("Name"));
       pWeapon.setDamage({ std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max")) });
       mWeaponDatabase.insert({ i, std::move(pWeapon) });
+      mItemDatabase.insert({ i, std::move(pWeapon) });
     }
   }
   // Create armor objects
@@ -46,6 +48,7 @@ void Data::init()
       Armor pArmor(std::stoul(section.at("Armor")));
       pArmor.setName(section.at("Name"));
       mArmorDatabase.insert({ i, std::move(pArmor) });
+      mItemDatabase.insert({ i, std::move(pArmor) });
     }
   }
 }
