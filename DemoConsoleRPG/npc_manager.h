@@ -3,14 +3,14 @@
 #include "npc.h"
 #include <vector>
 
-class NPCManager
+class NpcManager
 {
 private:
-  std::vector<NPC> mNPC;
+  std::vector<Npc> mNpc;
 
 public:
-  void createNPCs(const std::string& filename);
-  const std::vector<NPC>& getNPCs() const;
-  std::vector<NPC>& getNPCs();
-  NPC& getNPC(GameData::Position pos);
+  void createNpcs(const std::string& filename);
+  const std::vector<Npc>& getNpcs() const;
+  std::vector<Npc>& getNpcs();
+  Npc& getNpc(GameData::Position pos);
 };

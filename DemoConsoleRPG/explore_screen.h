@@ -32,7 +32,7 @@ private:
 	Equipment mEquipment;
 	EnemyManager mEnemyManager;
 	ObjectManager mObjectManager;
-	NPCManager mNPCManager;
+	NpcManager mNpcManager;
 	ConsoleHUD mConsoleHUD;
 	Level mLevel;
 	Map mCurrentMap;

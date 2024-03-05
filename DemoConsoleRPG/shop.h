@@ -1,6 +1,7 @@
 #pragma once
 
 #include "game_object.h"
+#include "npc.h"
 #include <vector>
 #include <memory>
 

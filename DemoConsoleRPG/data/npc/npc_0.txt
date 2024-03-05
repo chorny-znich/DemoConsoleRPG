@@ -1,8 +1,8 @@
 [general]
-NPC_amount=1
+Npc_amount=1
 
 [npc_1]
-Name=Trader
+Name=Trader 1
 Position_x=5
 Position_y=1
 Symbol=T

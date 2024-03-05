@@ -3,6 +3,6 @@
 #include "entity.h"
 #include "rp_stats.h"
 
-class NPC : public Entity, public RPStats
+class Npc : public Entity, public RPStats
 {
 };

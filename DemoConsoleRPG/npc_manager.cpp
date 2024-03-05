@@ -1,31 +1,41 @@
-#include "npc_manager.h"
+#include "Npc_manager.h"
 #include <DisRealityGF.h>
 
-void NPCManager::createNPCs(const std::string& filename)
+void NpcManager::createNpcs(const std::string& filename)
 {
-  mNPC.clear();
-  size_t NPCAmount{ 0 };
+  mNpc.clear();
+  size_t NpcAmount{ 0 };
   ini::Document doc = ini::Load(filename);
   ini::Section section = doc.GetSection("general");
-  NPCAmount = std::stoul(section.at("NPC_amount"));
+  NpcAmount = std::stoul(section.at("Npc_amount"));
 
-  for (size_t i{ 1 }; i <= NPCAmount; i++) {
-    NPC npc;
+  for (size_t i{ 1 }; i <= NpcAmount; i++) {
+    Npc Npc;
     std::string sectionName = "npc_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
-    npc.spawn({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-    npc.setSymbol(section.at("Symbol")[0]);
-    npc.setName(section.at("Name"));
-    mNPC.push_back(std::move(npc));
+    Npc.spawn({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+    Npc.setSymbol(section.at("Symbol")[0]);
+    Npc.setName(section.at("Name"));
+    mNpc.push_back(std::move(Npc));
   }
 }
 
-const std::vector<NPC>& NPCManager::getNPCs() const
+const std::vector<Npc>& NpcManager::getNpcs() const
 {
-  return mNPC;
+  return mNpc;
 }
 
-std::vector<NPC>& NPCManager::getNPCs()
+std::vector<Npc>& NpcManager::getNpcs()
 {
-  return mNPC;
+  return mNpc;
+}
+
+Npc& NpcManager::getNpc(GameData::Position pos)
+{
+  for (auto& npc : mNpc) {
+    if (pos.first == npc.getPosition().first && pos.second == npc.getPosition().second) {
+      return npc;
+    }
+  }
+  throw std::runtime_error("Enemy don't exist");
 }
