@@ -1,16 +1,13 @@
 #pragma once
 
 #include "game_state.h"
-/*
-#include "map.h" 
-#include "player.h" 
-#include "coin.h"
-#include "player_interface.h"
-*/ 
+#include "data.h"
+
 class Engine
 { 
 private:
   GameState mGameState;
+  Data mData;
   
   bool mRunning{ true };/*
 

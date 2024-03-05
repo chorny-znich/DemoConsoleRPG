@@ -1,0 +1,58 @@
+[general]
+Potion_amount=1
+Weapon_amount=5
+Armor_amount=3
+
+[potion_1]
+Name=Healing potion
+Type=HEALING_POTION
+
+[weapon_1]
+Id=1
+Name=Rusty dagger
+Damage_min=1
+Damage_max=3
+Type=WEAPON
+
+[weapon_2]
+Id=2
+Name=Dagger
+Damage_min=1
+Damage_max=4
+Type=WEAPON
+
+[weapon_3]
+Id=3
+Name=Club
+Damage_min=1
+Damage_max=5
+Type=WEAPON
+
+[weapon_4]
+Id=4
+Name=Mace
+Damage_min=1
+Damage_max=6
+Type=WEAPON
+
+[weapon_5]
+Id=5
+Name=Old sword
+Damage_min=2
+Damage_max=8
+Type=WEAPON
+
+[armor_1]
+Name=Woven jacket
+Armor=1
+Type=ARMOR
+
+[armor_2]
+Name=Leather jacket
+Armor=2
+Type=ARMOR
+
+[armor_3]
+Name=Reinforced leather jacket
+Armor=3
+Type=ARMOR

@@ -12,6 +12,7 @@ void Engine::init()
   COORD bufferSize{ 800, 600 };
   SetConsoleScreenBufferSize(hWindowConsole, bufferSize);
   MoveWindow(hWindowConsole, 600, 200, bufferSize.X, bufferSize.Y, TRUE);
+  mData.init();
 }
 
 void Engine::input()

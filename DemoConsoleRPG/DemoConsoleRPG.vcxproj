@@ -151,6 +151,7 @@
     <ClCompile Include="console_hud.cpp" />
     <ClCompile Include="current_npc.cpp" />
     <ClCompile Include="curren_npc.cpp" />
+    <ClCompile Include="data.cpp" />
     <ClCompile Include="DemoConsoleRPG.cpp" />
     <ClCompile Include="door.cpp" />
     <ClCompile Include="enemy.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="battle.h" />
     <ClInclude Include="console_hud.h" />
     <ClInclude Include="current_npc.h" />
+    <ClInclude Include="data.h" />
     <ClInclude Include="door.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_manager.h" />
@@ -225,6 +227,7 @@
     <Text Include="data\enemies\enemies_0.txt" />
     <Text Include="data\enemies\enemies_1.txt" />
     <Text Include="data\enemies\enemies_2.txt" />
+    <Text Include="data\items.txt" />
     <Text Include="data\maps\map_0.txt" />
     <Text Include="data\maps\map_1.txt" />
     <Text Include="data\maps\map_2.txt" />

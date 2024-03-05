@@ -88,6 +88,9 @@
     <Filter Include="Файлы ресурсов\NPC">
       <UniqueIdentifier>{76ce5b98-0424-48f9-8de0-0fd6c290761e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Item">
+      <UniqueIdentifier>{467c11b5-d663-471c-9c04-9adbd55db541}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemoConsoleRPG.cpp">
@@ -193,6 +196,9 @@
       <Filter>Исходные файлы\Interface</Filter>
     </ClCompile>
     <ClCompile Include="curren_npc.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="data.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -308,6 +314,9 @@
     <ClInclude Include="shop.h">
       <Filter>Файлы заголовков\RP system</Filter>
     </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\enemies\enemies_1.txt">
@@ -354,6 +363,9 @@
     </Text>
     <Text Include="data\npc\npc_0.txt">
       <Filter>Файлы ресурсов\NPC</Filter>
+    </Text>
+    <Text Include="data\items.txt">
+      <Filter>Файлы ресурсов\Item</Filter>
     </Text>
   </ItemGroup>
 </Project>

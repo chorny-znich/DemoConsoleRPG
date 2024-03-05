@@ -24,6 +24,7 @@ namespace GameData {
 
   inline namespace path {
     const std::string PlayerInfo = R"(data/player.txt)";
+    const std::string ItemsInfo = R"(data/items.txt)";
   } /*
   enum class RPClass {
     Adventurer
