@@ -189,17 +189,14 @@
     <ClCompile Include="shop_screen.cpp">
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
-    <ClCompile Include="shop.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="current_npc.cpp">
       <Filter>Исходные файлы\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="curren_npc.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="data.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="shop.cpp">
+      <Filter>Исходные файлы\RP system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -315,7 +312,7 @@
       <Filter>Файлы заголовков\RP system</Filter>
     </ClInclude>
     <ClInclude Include="data.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,12 +6,13 @@
 #include "weapon.h"
 #include "armor.h"
 #include <DisRealityGF.h>
+#include <memory>
 
 class Data
 {
 private:
-  Data* mpInstance{ nullptr };
-  std::unordered_map<size_t, GameObject> mItemDatabase;
+  static Data* mpInstance;
+  std::unordered_map<size_t, std::shared_ptr<GameObject>> mItemDatabase;
   std::unordered_map<size_t, Potion> mPotionDatabase;
   std::unordered_map<size_t, Weapon> mWeaponDatabase;
   std::unordered_map<size_t, Armor> mArmorDatabase;
@@ -19,5 +20,6 @@ private:
 public:
   Data();
   void init();
+  static std::shared_ptr<GameObject> getItem(size_t id);
 };
 

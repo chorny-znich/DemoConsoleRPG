@@ -150,7 +150,6 @@
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="console_hud.cpp" />
     <ClCompile Include="current_npc.cpp" />
-    <ClCompile Include="curren_npc.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="DemoConsoleRPG.cpp" />
     <ClCompile Include="door.cpp" />

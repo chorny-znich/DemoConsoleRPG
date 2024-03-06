@@ -1,4 +1,8 @@
 #include "Npc_manager.h"
+#include "data.h"
+#include "potion.h"
+#include "weapon.h"
+#include "armor.h"
 #include <DisRealityGF.h>
 
 void NpcManager::createNpcs(const std::string& filename)
@@ -10,12 +14,35 @@ void NpcManager::createNpcs(const std::string& filename)
   NpcAmount = std::stoul(section.at("Npc_amount"));
 
   for (size_t i{ 1 }; i <= NpcAmount; i++) {
-    Npc Npc;
+    Npc npc;
     std::string sectionName = "npc_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
-    Npc.spawn({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-    Npc.setSymbol(section.at("Symbol")[0]);
-    Npc.setName(section.at("Name"));
+    size_t numberOfItems = std::stoul(section.at("NumberOfItems"));
+    npc.spawn({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+    npc.setSymbol(section.at("Symbol")[0]);
+    npc.setName(section.at("Name"));
+    for (size_t j{ 1 }; j <= numberOfItems; j++) {
+      std::string keyName = "Item_" + std::to_string(j);
+      size_t itemId = std::stoul(section.at(keyName));
+      auto object = Data::getItem(itemId);
+
+      if (object->getType() == GameObjectType::POTION) {
+        if (object->getSubType() == GameObjectSubType::HEALING_POTION) {
+          auto potion = std::static_pointer_cast<Potion>(object);
+
+          std::shared_ptr<HealingPotion> pHealingPotion{ std::make_shared<HealingPotion>() };
+          pHealingPotion->setName(potion->getName());
+          npc.addStaff(pHealingPotion);
+        }
+      }
+      else if (object->getType() == GameObjectType::WEAPON) {
+
+      }
+      else if (object->getType() == GameObjectType::ARMOR) {
+
+      }
+    }
+
     mNpc.push_back(std::move(Npc));
   }
 }
