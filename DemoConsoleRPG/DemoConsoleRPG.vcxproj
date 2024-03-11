@@ -238,7 +238,6 @@
     <Text Include="enemies_3.txt" />
     <Text Include="enemy_list.txt" />
     <Text Include="objects_3.txt" />
-    <Text Include="weapon_list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

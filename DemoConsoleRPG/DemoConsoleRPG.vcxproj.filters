@@ -355,9 +355,6 @@
     <Text Include="enemy_list.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
-    <Text Include="weapon_list.txt">
-      <Filter>Файлы ресурсов\Object</Filter>
-    </Text>
     <Text Include="data\npc\npc_0.txt">
       <Filter>Файлы ресурсов\NPC</Filter>
     </Text>

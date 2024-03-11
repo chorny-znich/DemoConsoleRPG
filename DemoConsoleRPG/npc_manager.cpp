@@ -36,14 +36,23 @@ void NpcManager::createNpcs(const std::string& filename)
         }
       }
       else if (object->getType() == GameObjectType::WEAPON) {
+        auto weapon = std::static_pointer_cast<Weapon>(object);
 
+        std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
+        pWeapon->setName(weapon->getName());
+        pWeapon->setDamage({ weapon->getDamage() });
+        npc.addStaff(pWeapon);
       }
       else if (object->getType() == GameObjectType::ARMOR) {
+        auto armor = std::static_pointer_cast<Armor>(object);
 
+        std::shared_ptr<Armor> pArmor = std::make_shared<Armor>(std::stoul(section.at("Armor")));
+        pArmor->setName(section.at("Name"));
+        npc.addStaff(pArmor);
       }
     }
 
-    mNpc.push_back(std::move(Npc));
+    mNpc.push_back(std::move(npc));
   }
 }
 
