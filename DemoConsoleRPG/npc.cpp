@@ -1,6 +1,22 @@
+#include <format>
 #include "npc.h"
 
 void Npc::addStaff(std::shared_ptr<GameObject> object)
 {
   mStaff.push_back(std::move(object));
+}
+
+std::string Npc::showStaff() const
+{
+  std::string result{};
+  result.append("Items for sale:\n");
+  if (mStaff.size() == 0) {
+    return result.append("There is nothing for sale");
+  }
+  size_t counter{ 1 };
+  for (auto pObject : mStaff) {
+    result.append(std::format("{}. {}\n", counter++, pObject->getName()));
+  }
+
+  return result;
 }

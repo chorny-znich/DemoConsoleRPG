@@ -14,6 +14,7 @@ std::string Shop::show()
   std::string result;
   result.append("\t\tSHOP\n");
   result.append(mpNpc->getName() + '\n');
+  result.append(mpNpc->showStaff() + '\n');
 
   return result;
 }

@@ -5,6 +5,7 @@
 #include "game_object.h"
 #include <vector>
 #include <memory>
+#include <string>
 
 class Npc : public Entity, public RPStats
 {
@@ -13,4 +14,5 @@ private:
 
 public:
   void addStaff(std::shared_ptr<GameObject>);
+  std::string showStaff() const;
 };
