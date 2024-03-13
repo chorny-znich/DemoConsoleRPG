@@ -1,7 +1,8 @@
 #include "shop.h"
 
 Shop::Shop(std::unique_ptr<Npc> pNpc) :
-  mpNpc{std::move(pNpc)}
+  mpNpc{std::move(pNpc)},
+  mStaff{mpNpc->getStaff()}
 {
 }
 

@@ -9,6 +9,7 @@ private:
   size_t mArmor;
 
 public:
-  Armor(size_t armor);
+  Armor();
+  void setArmor(size_t value);
   size_t getArmor() const;
 };

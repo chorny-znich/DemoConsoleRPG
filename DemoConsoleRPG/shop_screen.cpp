@@ -5,17 +5,17 @@
 #include <format>
 #include <string>
 
+ShopScreen::ShopScreen() :
+  mShop{ std::move(CurrentNpc::getNpc()) },
+  mRenderScreen{ true }
+{
+}
+
 void ShopScreen::showStaff()
 {
   std::cout << mShop.show();
   std::cout << std::format("\n{}. Exit\n\n", mShop.getSize() + 1);
   std::cout << "Your action: ";
-}
-
-ShopScreen::ShopScreen() :
-  mShop{std::move(CurrentNpc::getNpc())},
-  mRenderScreen{true}
-{
 }
 
 void ShopScreen::init()

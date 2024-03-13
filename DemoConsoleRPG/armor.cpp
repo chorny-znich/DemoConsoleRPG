@@ -1,10 +1,15 @@
 #include "armor.h"
 
-Armor::Armor(size_t armor) :
+Armor::Armor() :
   GameObject(GameObjectType::ARMOR, GameObjectSubType::CHEST),
-  mArmor{ armor }
+  mArmor{0}
 {
   setSymbol(IMAGE);
+}
+
+void Armor::setArmor(size_t value)
+{
+  mArmor = value;
 }
 
 size_t Armor::getArmor() const

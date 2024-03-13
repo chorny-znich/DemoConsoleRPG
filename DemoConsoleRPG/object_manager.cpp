@@ -73,8 +73,9 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "armor_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "ARMOR") {
-      std::shared_ptr<Armor> pArmor = std::make_shared<Armor>(std::stoul(section.at("Armor")));
+      std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
       pArmor->setName(section.at("Name"));
+      pArmor->setArmor(std::stoul(section.at("Armor")));
       pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       mObjects.push_back(std::move(pArmor));
     }

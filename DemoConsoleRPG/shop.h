@@ -9,7 +9,7 @@ class Shop
 {
 private:
   std::unique_ptr<Npc> mpNpc;
-  std::vector<std::shared_ptr<GameObject>> mStaff;
+  std::vector<std::shared_ptr<GameObject>>& mStaff;
 
 public:
   Shop(std::unique_ptr<Npc> pNpc);

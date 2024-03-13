@@ -6,10 +6,15 @@ void Npc::addStaff(std::shared_ptr<GameObject> object)
   mStaff.push_back(std::move(object));
 }
 
+std::vector<std::shared_ptr<GameObject>>& Npc::getStaff()
+{
+  return mStaff;
+}
+
 std::string Npc::showStaff() const
 {
   std::string result{};
-  result.append("Items for sale:\n");
+  result.append("\nItems for sale:\n");
   if (mStaff.size() == 0) {
     return result.append("There is nothing for sale");
   }

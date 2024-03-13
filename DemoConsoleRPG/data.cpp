@@ -47,7 +47,7 @@ void Data::init()
     std::string sectionName = "armor_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "ARMOR") {
-      std::shared_ptr<Armor> pArmor = std::make_shared<Armor>(std::stoul(section.at("Armor")));
+      std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
       pArmor->setName(section.at("Name"));
       //mArmorDatabase.insert({ i, std::move(pArmor) });
       mItemDatabase.insert({ std::stoul(section.at("Id")), std::move(pArmor) });

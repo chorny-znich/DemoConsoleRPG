@@ -14,5 +14,6 @@ private:
 
 public:
   void addStaff(std::shared_ptr<GameObject>);
+  std::vector<std::shared_ptr<GameObject>>& getStaff();
   std::string showStaff() const;
 };

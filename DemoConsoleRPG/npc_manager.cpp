@@ -46,8 +46,9 @@ void NpcManager::createNpcs(const std::string& filename)
       else if (object->getType() == GameObjectType::ARMOR) {
         auto armor = std::static_pointer_cast<Armor>(object);
 
-        std::shared_ptr<Armor> pArmor = std::make_shared<Armor>(std::stoul(section.at("Armor")));
-        pArmor->setName(section.at("Name"));
+        std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
+        pArmor->setName(armor->getName());
+        pArmor->setArmor(armor->getArmor());
         npc.addStaff(pArmor);
       }
     }
