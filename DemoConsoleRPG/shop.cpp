@@ -1,18 +1,18 @@
 #include "shop.h"
 #include <format>
 
-Shop::Shop(std::unique_ptr<Npc> pNpc) :
-  mpNpc{std::move(pNpc)},
-  mStaff{mpNpc->getStaff()},
+Shop::Shop(std::shared_ptr<Npc> pNpc) :
+  mpNpc{pNpc},
+  //mStaff{mpNpc->getStaff()},
   mPlayer{Stats::getPlayer()},
   mInventory{Stats::getInventory()}
 {
 }
-
+/*
 void Shop::add(std::shared_ptr<GameObject> pObject)
 {
 }
-
+*/
 std::string Shop::show()
 {
   std::string result;
@@ -26,12 +26,18 @@ std::string Shop::show()
 
 size_t Shop::getSize() const
 {
-  return mStaff.size();
+  return mpNpc->getStaffSize();
+}
+
+void Shop::buy(size_t index)
+{
+  mInventory.add(mpNpc->getStaff().at(index));
+  mpNpc->removeFromStaff(index);
 }
 
 std::shared_ptr<GameObject>& Shop::getItem(size_t index)
 {
-  return mStaff.at(index);
+  return mpNpc->getStaff().at(index);
 }
 
 void Shop::destroyItem(size_t index)

@@ -6,7 +6,7 @@
 #include <string>
 
 ShopScreen::ShopScreen() :
-  mShop{ std::move(CurrentNpc::getNpc()) },
+  mShop{ CurrentNpc::getNpc() },
   mRenderScreen{ true }
 {
 }
@@ -37,18 +37,14 @@ void ShopScreen::inputHandler()
       std::cout << "Choose valid menu item\n\n";
       mRenderScreen = true;
     }
-    else { /*
+    else { 
       std::cin >> cmd;
-      auto pCurrentItem = mInventory.getItem(menuItem - 1);
-      if (cmd == "drink" && pCurrentItem->getType() == GameObjectType::POTION) {
-        if (pCurrentItem->getSubType() == GameObjectSubType::HEALING_POTION) {
-          auto healingPotion = std::static_pointer_cast<HealingPotion>(pCurrentItem);
-          mPlayer.increaseHealth(healingPotion->drink());
-        }
-        mRenderScreen = true;
-        mInventory.destroyItem(menuItem - 1);
-        GameState::destroyScreen();
+      //auto pCurrentItem = mInventory.getItem(menuItem - 1);
+      if (cmd == "buy") {
+        mShop.buy(menuItem - 1);
       }
+        mRenderScreen = true;
+    } /*
       else if (cmd == "equip" && pCurrentItem->getType() == GameObjectType::WEAPON) {
         mEquipment.equip(pCurrentItem);
         auto pWeapon = std::static_pointer_cast<Weapon>(pCurrentItem);
@@ -65,7 +61,6 @@ void ShopScreen::inputHandler()
         std::cout << "Enter the proper action\n\n";
         mRenderScreen = true;
       }*/
-    }
   }
 }
 

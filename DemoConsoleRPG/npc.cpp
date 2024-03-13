@@ -11,6 +11,11 @@ std::vector<std::shared_ptr<GameObject>>& Npc::getStaff()
   return mStaff;
 }
 
+size_t Npc::getStaffSize() const
+{
+  return mStaff.size();
+}
+
 std::string Npc::showStaff() const
 {
   std::string result{};
@@ -24,4 +29,9 @@ std::string Npc::showStaff() const
   }
 
   return result;
+}
+
+void Npc::removeFromStaff(size_t index)
+{
+  mStaff.erase(mStaff.begin() + index);
 }

@@ -7,13 +7,13 @@ CurrentNpc::CurrentNpc()
   mpInstance = this;
 }
 
-void CurrentNpc::setNpc(std::unique_ptr<Npc> pNpc)
+void CurrentNpc::setNpc(std::shared_ptr<Npc> pNpc)
 {
   auto& npc = mpInstance->mpNpc;
-  npc = std::move(pNpc);
+  npc = pNpc;
 }
 
-std::unique_ptr<Npc>& CurrentNpc::getNpc()
+std::shared_ptr<Npc> CurrentNpc::getNpc()
 {
   auto& npc = mpInstance->mpNpc;
 
