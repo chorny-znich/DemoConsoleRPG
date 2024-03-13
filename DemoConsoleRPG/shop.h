@@ -2,6 +2,7 @@
 
 #include "game_object.h"
 #include "npc.h"
+#include "stats.h"
 #include <vector>
 #include <memory>
 
@@ -10,6 +11,8 @@ class Shop
 private:
   std::unique_ptr<Npc> mpNpc;
   std::vector<std::shared_ptr<GameObject>>& mStaff;
+  Player& mPlayer;
+  Inventory& mInventory;
 
 public:
   Shop(std::unique_ptr<Npc> pNpc);

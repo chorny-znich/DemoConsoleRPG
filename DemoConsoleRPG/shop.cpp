@@ -1,8 +1,11 @@
 #include "shop.h"
+#include <format>
 
 Shop::Shop(std::unique_ptr<Npc> pNpc) :
   mpNpc{std::move(pNpc)},
-  mStaff{mpNpc->getStaff()}
+  mStaff{mpNpc->getStaff()},
+  mPlayer{Stats::getPlayer()},
+  mInventory{Stats::getInventory()}
 {
 }
 
@@ -15,6 +18,7 @@ std::string Shop::show()
   std::string result;
   result.append("\t\tSHOP\n");
   result.append(mpNpc->getName() + '\n');
+  result.append(std::format("{} has ${}\n", mPlayer.getName(), mPlayer.getMoney()));
   result.append(mpNpc->showStaff() + '\n');
 
   return result;

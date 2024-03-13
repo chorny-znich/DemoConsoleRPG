@@ -196,7 +196,7 @@
       <Filter>Исходные файлы\Engine</Filter>
     </ClCompile>
     <ClCompile Include="shop.cpp">
-      <Filter>Исходные файлы\RP system</Filter>
+      <Filter>Исходные файлы\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -308,11 +308,11 @@
     <ClInclude Include="current_npc.h">
       <Filter>Файлы заголовков\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="shop.h">
-      <Filter>Файлы заголовков\RP system</Filter>
-    </ClInclude>
     <ClInclude Include="data.h">
       <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="shop.h">
+      <Filter>Файлы заголовков\Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
