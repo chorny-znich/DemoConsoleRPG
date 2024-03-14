@@ -45,6 +45,7 @@ public:
 	size_t& getExperience();
 	void setExperienceForKill(size_t exp);
 	size_t getExperienceForKill() const;
+	void setMoney(size_t money);
 	void increaseMoney(size_t money);
 	void decreaseMoney(size_t money);
 	size_t getMoney() const;

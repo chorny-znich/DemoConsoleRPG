@@ -31,8 +31,12 @@ size_t Shop::getSize() const
 
 void Shop::buy(size_t index)
 {
-  mInventory.add(mpNpc->getStaff().at(index));
-  mpNpc->removeFromStaff(index);
+  size_t price = mpNpc->getStaff().at(index)->getPrice();
+  if (mPlayer.getMoney() >= price) {
+    mInventory.add(mpNpc->getStaff().at(index));
+    mpNpc->removeFromStaff(index);
+    mPlayer.decreaseMoney(price);
+  }
 }
 
 std::shared_ptr<GameObject>& Shop::getItem(size_t index)

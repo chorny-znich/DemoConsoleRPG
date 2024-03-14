@@ -19,6 +19,7 @@ void Player::create()
   setDefence(std::stoul(section.at("Defence")));
   spawn({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
   setDamage({ std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max")) });
+  setMoney({std::stoul(section.at("Money"))});
 }
 
 void Player::update()

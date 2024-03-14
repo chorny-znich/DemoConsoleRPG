@@ -45,6 +45,11 @@ size_t RPStats::getExperienceForKill() const
 	return mExperienceForKill;
 }
 
+void RPStats::setMoney(size_t money)
+{
+	mMoney = money;
+}
+
 void RPStats::increaseMoney(size_t money)
 {
 	mMoney += money;
