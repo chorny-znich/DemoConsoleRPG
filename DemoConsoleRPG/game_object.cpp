@@ -56,3 +56,13 @@ char GameObject::getSymbol() const
 {
   return mSymbol;
 }
+
+void GameObject::setPrice(size_t value)
+{
+  mPrice = value;
+}
+
+size_t GameObject::getPrice() const
+{
+  return mPrice;
+}

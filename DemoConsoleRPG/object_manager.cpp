@@ -53,6 +53,7 @@ void ObjectManager::createObjects(const std::string& filename)
       std::shared_ptr<HealingPotion> pPotion = std::make_shared<HealingPotion>();
       pPotion->setName(section.at("Name"));
       pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      pPotion->setPrice({std::stoul(section.at("Price"))});
       mObjects.push_back(std::move(pPotion));
     }
   }
@@ -65,6 +66,7 @@ void ObjectManager::createObjects(const std::string& filename)
       pWeapon->setName(section.at("Name"));
       pWeapon->setDamage({std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max"))});
       pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      pWeapon->setPrice({ std::stoul(section.at("Price")) });
       mObjects.push_back(std::move(pWeapon));
     }
   }
@@ -77,6 +79,7 @@ void ObjectManager::createObjects(const std::string& filename)
       pArmor->setName(section.at("Name"));
       pArmor->setArmor(std::stoul(section.at("Armor")));
       pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+      pArmor->setPrice({ std::stoul(section.at("Price")) });
       mObjects.push_back(std::move(pArmor));
     }
   }

@@ -32,6 +32,7 @@ void NpcManager::createNpcs(const std::string& filename)
 
           std::shared_ptr<HealingPotion> pHealingPotion{ std::make_shared<HealingPotion>() };
           pHealingPotion->setName(potion->getName());
+          pHealingPotion->setPrice(potion->getPrice());
           npc.addStaff(pHealingPotion);
         }
       }
@@ -41,6 +42,7 @@ void NpcManager::createNpcs(const std::string& filename)
         std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
         pWeapon->setName(weapon->getName());
         pWeapon->setDamage({ weapon->getDamage() });
+        pWeapon->setPrice(weapon->getPrice());
         npc.addStaff(pWeapon);
       }
       else if (object->getType() == GameObjectType::ARMOR) {
@@ -49,6 +51,7 @@ void NpcManager::createNpcs(const std::string& filename)
         std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
         pArmor->setName(armor->getName());
         pArmor->setArmor(armor->getArmor());
+        pArmor->setPrice(armor->getPrice());
         npc.addStaff(pArmor);
       }
     }

@@ -26,6 +26,7 @@ void Data::init()
     if (section.at("Type") == "HEALING_POTION") {
       std::shared_ptr<HealingPotion> pPotion = std::make_shared<HealingPotion>();
       pPotion->setName(section.at("Name"));
+      pPotion->setPrice(std::stoul(section.at("Price")));
       //mPotionDatabase.insert({i, std::move(pPotion) });
       mItemDatabase.insert({ std::stoul(section.at("Id")), std::move(pPotion)});
     }
@@ -38,6 +39,7 @@ void Data::init()
       std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
       pWeapon->setName(section.at("Name"));
       pWeapon->setDamage({ std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max")) });
+      pWeapon->setPrice(std::stoul(section.at("Price")));
       //mWeaponDatabase.insert({ i, std::move(pWeapon) });
       mItemDatabase.insert({ std::stoul(section.at("Id")), std::move(pWeapon) });
     }
@@ -49,6 +51,7 @@ void Data::init()
     if (section.at("Type") == "ARMOR") {
       std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
       pArmor->setName(section.at("Name"));
+      pArmor->setPrice(std::stoul(section.at("Price")));
       //mArmorDatabase.insert({ i, std::move(pArmor) });
       mItemDatabase.insert({ std::stoul(section.at("Id")), std::move(pArmor) });
     }

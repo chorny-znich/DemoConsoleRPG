@@ -25,7 +25,7 @@ std::string Npc::showStaff() const
   }
   size_t counter{ 1 };
   for (auto pObject : mStaff) {
-    result.append(std::format("{}. {}\n", counter++, pObject->getName()));
+    result.append(std::format("{}. {} -- ${}\n", counter++, pObject->getName(), pObject->getPrice()));
   }
 
   return result;

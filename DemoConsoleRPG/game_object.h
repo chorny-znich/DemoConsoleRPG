@@ -10,6 +10,7 @@ private:
   std::string mName;
   GameData::Position mPosition;
   char mSymbol;
+  size_t mPrice;
 
 protected:
   GameObjectType mType;
@@ -27,4 +28,6 @@ public:
   GameData::Position getPosition() const;
   void setSymbol(char symbol);
   char getSymbol() const;
+  void setPrice(size_t value);
+  size_t getPrice() const;
 };

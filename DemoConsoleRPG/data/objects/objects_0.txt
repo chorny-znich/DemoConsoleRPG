@@ -26,3 +26,4 @@ Damage_max=3
 Position_x=3
 Position_y=1
 Type=WEAPON
+Price=2
