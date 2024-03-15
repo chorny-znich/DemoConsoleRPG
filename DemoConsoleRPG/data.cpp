@@ -52,6 +52,7 @@ void Data::init()
       std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
       pArmor->setName(section.at("Name"));
       pArmor->setPrice(std::stoul(section.at("Price")));
+      pArmor->setArmor(std::stoul(section.at("Armor")));
       //mArmorDatabase.insert({ i, std::move(pArmor) });
       mItemDatabase.insert({ std::stoul(section.at("Id")), std::move(pArmor) });
     }
@@ -60,6 +61,6 @@ void Data::init()
 
 std::shared_ptr<GameObject> Data::getItem(size_t id)
 {
-  auto& instance = mpInstance;
-  return mpInstance->mItemDatabase.at(id);
+  auto& itemDatabase = mpInstance->mItemDatabase;
+  return itemDatabase.at(id);
 }

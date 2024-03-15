@@ -349,9 +349,6 @@
     <Text Include="enemies_3.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
-    <Text Include="objects_3.txt">
-      <Filter>Файлы ресурсов\Object</Filter>
-    </Text>
     <Text Include="enemy_list.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
@@ -360,6 +357,21 @@
     </Text>
     <Text Include="data\items.txt">
       <Filter>Файлы ресурсов\Item</Filter>
+    </Text>
+    <Text Include="data\npc\npc_1.txt">
+      <Filter>Файлы ресурсов\NPC</Filter>
+    </Text>
+    <Text Include="data\npc\npc_2.txt">
+      <Filter>Файлы ресурсов\NPC</Filter>
+    </Text>
+    <Text Include="data\maps\map_3.txt">
+      <Filter>Файлы ресурсов\Map</Filter>
+    </Text>
+    <Text Include="data\npc\npc_3.txt">
+      <Filter>Файлы ресурсов\NPC</Filter>
+    </Text>
+    <Text Include="data\objects\objects_3.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
     </Text>
   </ItemGroup>
 </Project>

@@ -9,4 +9,4 @@ Damage_max=2
 Position_x=1
 Position_y=1
 Symbol=@
-Money=100
+Money=0

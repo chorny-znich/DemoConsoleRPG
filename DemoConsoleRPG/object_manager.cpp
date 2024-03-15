@@ -6,6 +6,7 @@
 #include "armor.h"
 #include "door.h"
 #include "map_symbols.h"
+#include "data.h" 
 #include <unordered_map>
 #include <algorithm>
 #include <stdexcept>
@@ -50,10 +51,12 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "potion_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "HEALING_POTION") {
+      size_t itemId = std::stoul(section.at("Id"));
+      auto object = std::static_pointer_cast<HealingPotion>(Data::getItem(itemId));
       std::shared_ptr<HealingPotion> pPotion = std::make_shared<HealingPotion>();
-      pPotion->setName(section.at("Name"));
+      pPotion->setName(object->getName());
       pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-      pPotion->setPrice({std::stoul(section.at("Price"))});
+      pPotion->setPrice(object->getPrice());
       mObjects.push_back(std::move(pPotion));
     }
   }
@@ -62,11 +65,13 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "weapon_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "WEAPON") {
+      size_t itemId = std::stoul(section.at("Id"));
+      auto object = std::static_pointer_cast<Weapon>(Data::getItem(itemId));
       std::shared_ptr<Weapon> pWeapon = std::make_shared<Weapon>();
-      pWeapon->setName(section.at("Name"));
-      pWeapon->setDamage({std::stoul(section.at("Damage_min")), std::stoul(section.at("Damage_max"))});
+      pWeapon->setName(object->getName());
+      pWeapon->setDamage(object->getDamage());
       pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-      pWeapon->setPrice({ std::stoul(section.at("Price")) });
+      pWeapon->setPrice(object->getPrice());
       mObjects.push_back(std::move(pWeapon));
     }
   }
@@ -75,11 +80,13 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "armor_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     if (section.at("Type") == "ARMOR") {
+      size_t itemId = std::stoul(section.at("Id"));
+      auto object = std::static_pointer_cast<Armor>(Data::getItem(itemId));
       std::shared_ptr<Armor> pArmor = std::make_shared<Armor>();
-      pArmor->setName(section.at("Name"));
-      pArmor->setArmor(std::stoul(section.at("Armor")));
+      pArmor->setName(object->getName());
+      pArmor->setArmor(object->getArmor());
       pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
-      pArmor->setPrice({ std::stoul(section.at("Price")) });
+      pArmor->setPrice(object->getPrice());
       mObjects.push_back(std::move(pArmor));
     }
   }

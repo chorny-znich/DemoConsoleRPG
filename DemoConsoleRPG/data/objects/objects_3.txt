@@ -53,43 +53,37 @@ Player_position_x=9
 Player_position_y=1
 
 [potion_1]
-Name=Healing potion
+Id=1
 Position_x=19
 Position_y=6
 Type=HEALING_POTION
 
 [potion_2]
-Name=Healing potion
+Id=1
 Position_x=26
 Position_y=3
 Type=HEALING_POTION
 
 [weapon_1]
-Name=Mace
-Damage_min=1
-Damage_max=6
+Id=103
 Position_x=23
 Position_y=12
 Type=WEAPON
 
 [weapon_2]
-Name=Old sword
-Damage_min=2
-Damage_max=8
+Id=104
 Position_x=16
 Position_y=3
 Type=WEAPON
 
 [armor_1]
-Name=Leather jacket
-Armor=2
+Id=501
 Position_x=3
 Position_y=9
 Type=ARMOR
 
 [armor_2]
-Name=Reinforced leather jacket
-Armor=3
+Id=502
 Position_x=26
 Position_y=4
 Type=ARMOR

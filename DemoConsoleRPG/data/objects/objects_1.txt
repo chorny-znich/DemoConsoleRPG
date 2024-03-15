@@ -37,15 +37,13 @@ Player_position_x=26
 Player_position_y=14
 
 [potion_1]
-Name=Healing potion
+Id=1
 Position_x=14
 Position_y=1
 Type=HEALING_POTION
 
 [weapon_1]
-Name=Dagger
-Damage_min=1
-Damage_max=4
+Id=101
 Position_x=14
 Position_y=3
 Type=WEAPON

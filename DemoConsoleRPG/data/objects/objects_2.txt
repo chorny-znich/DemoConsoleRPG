@@ -4,7 +4,7 @@ Ladder_amount=2
 Potion_amount=1
 Weapon_amount=2
 Armor_amount=1
-Door_amount=6
+Door_amount=7
 
 [money_1]
 Position_x=12
@@ -61,30 +61,25 @@ Player_position_x=9
 Player_position_y=1
 
 [potion_1]
-Name=Healing potion
+Id=1
 Position_x=7
 Position_y=3
 Type=HEALING_POTION
 
 [weapon_1]
-Name=Dagger
-Damage_min=1
-Damage_max=4
+Id=101
 Position_x=5
 Position_y=12
 Type=WEAPON
 
 [weapon_2]
-Name=Club
-Damage_min=1
-Damage_max=5
+Id=102
 Position_x=1
 Position_y=8
 Type=WEAPON
 
 [armor_1]
-Name=Woven jacket
-Armor=1
+Id=500
 Position_x=26
 Position_y=9
 Type=ARMOR
@@ -128,5 +123,12 @@ Type=DOOR
 Name=Door
 Position_x=10
 Position_y=9
+Status=Locked
+Type=DOOR
+
+[door_7]
+Name=Door
+Position_x=22
+Position_y=1
 Status=Locked
 Type=DOOR
