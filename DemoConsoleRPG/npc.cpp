@@ -1,3 +1,4 @@
+#include <string>
 #include <format>
 #include "npc.h"
 
