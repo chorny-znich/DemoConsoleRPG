@@ -1,5 +1,5 @@
 // the demo version of the RPG rendering in the windows console
-// version 0.0.2
+// version 0.3.0
 
 #include "engine.h"
 
