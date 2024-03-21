@@ -21,6 +21,9 @@ protected:
 		{4, {{"attack", 0}, {"defence", 1}, {"health", 5}}},
 		{5, {{"attack", 1}, {"defence", 0}, {"health", 5}}}
 	};
+	std::unordered_map<std::string, size_t> mSkills{
+		{"search", 0}
+	};
 
 	std::string mName{ "Vargar" };
 	size_t mExperience{ 0 };
@@ -65,4 +68,7 @@ public:
 	void increaseHealth(size_t value);
 	void decreaseHealth(size_t value);
 	size_t getHealth() const;
+
+	void increaseSkill(const std::string& str);
+	size_t getSearchSkill(const std::string& str);
 };

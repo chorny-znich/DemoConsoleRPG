@@ -149,3 +149,13 @@ size_t RPStats::getHealth() const
 {
 	return mHealth;
 }
+
+void RPStats::increaseSkill(const std::string& str)
+{
+	mSkills[str] += 1;
+}
+
+size_t RPStats::getSearchSkill(const std::string& str)
+{
+	return mSkills[str];
+}
