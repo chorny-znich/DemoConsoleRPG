@@ -30,6 +30,7 @@ void ObjectManager::createObjects(const std::string& filename)
     std::string sectionName = "money_" + std::to_string(i);
     ini::Section section = doc.GetSection(sectionName);
     pMoney->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
+    pMoney->setVisibility(std::stoul(section.at("Visibility")));
     mObjects.push_back(std::move(pMoney));
   }
   // Create ladder objects
@@ -44,6 +45,7 @@ void ObjectManager::createObjects(const std::string& filename)
     pLadder->setSymbol(symbol);
     pLadder->setMapIndexTo(std::stoi(section.at("Map_index_to")));
     pLadder->setPlayerSpawnTo({ std::stoi(section.at("Player_position_x")), std::stoi(section.at("Player_position_y")) });
+    pLadder->setVisibility(std::stoul(section.at("Visibility")));
     mObjects.push_back(std::move(pLadder));
   }
   // Create potion objects
@@ -57,6 +59,7 @@ void ObjectManager::createObjects(const std::string& filename)
       pPotion->setName(object->getName());
       pPotion->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       pPotion->setPrice(object->getPrice());
+      pPotion->setVisibility(std::stoul(section.at("Visibility")));
       mObjects.push_back(std::move(pPotion));
     }
   }
@@ -72,6 +75,7 @@ void ObjectManager::createObjects(const std::string& filename)
       pWeapon->setDamage(object->getDamage());
       pWeapon->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       pWeapon->setPrice(object->getPrice());
+      pWeapon->setVisibility(std::stoul(section.at("Visibility")));
       mObjects.push_back(std::move(pWeapon));
     }
   }
@@ -87,6 +91,7 @@ void ObjectManager::createObjects(const std::string& filename)
       pArmor->setArmor(object->getArmor());
       pArmor->setPosition({ std::stoi(section.at("Position_x")), std::stoi(section.at("Position_y")) });
       pArmor->setPrice(object->getPrice());
+      pArmor->setVisibility(std::stoul(section.at("Visibility")));
       mObjects.push_back(std::move(pArmor));
     }
   }

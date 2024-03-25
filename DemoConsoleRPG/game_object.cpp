@@ -66,3 +66,13 @@ size_t GameObject::getPrice() const
 {
   return mPrice;
 }
+
+void GameObject::setVisibility(size_t value)
+{
+  mVisibility = value;
+}
+
+size_t GameObject::getVisibility() const
+{
+  return mVisibility;
+}
