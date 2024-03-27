@@ -15,5 +15,6 @@ public:
   const std::vector<std::shared_ptr<GameObject>>& getObjects() const;
   std::vector<std::shared_ptr<GameObject>>& getObjects();
   std::shared_ptr<GameObject>& getObject(GameData::Position pos);
+  bool isObject(GameData::Position pos);
   void destroyObject(GameData::Position pos);
 };

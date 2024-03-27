@@ -12,6 +12,8 @@
 #include "screen_manager.h" 
 #include "game_state.h"
 
+#include <DisRealityGF.h>
+
 ExploreScreen::ExploreScreen() :
   mCurrentMap{0},
   mStats{ mPlayer, mInventory, mEquipment }
@@ -128,6 +130,11 @@ void ExploreScreen::update()
     }
     mState = GameplayState::ENEMY_TURN_SHOW;
   } 
+  // Check for the objects visibility
+  if (mState == GameplayState::START || mState == GameplayState::PLAYER_TURN_SHOW) {
+    checkEnvironment(mPlayer.getPosition());
+  }
+
   // prepare the current map and the interface to render
   if (mState == GameplayState::PLAYER_TURN_SHOW || mState == GameplayState::ENEMY_TURN_SHOW || 
     mState == GameplayState::START) {
@@ -141,7 +148,7 @@ void ExploreScreen::update()
       mPlayer.getMoney()) }, 0);
     mConsoleHUD.setTopHud(std::string{ std::format("HP:{}/{}", mPlayer.getHealth(), mPlayer.getMaxHealth()) }, 1);
     mConsoleHUD.setTopHud(std::string{ std::format("Atk:{} Def:{}", mPlayer.getAttack(), mPlayer.getDefence()) }, 2);
-  } 
+  }  
 }
 
 void ExploreScreen::render()
@@ -419,4 +426,44 @@ void ExploreScreen::changeMap()
   mObjectManager.createObjects(mLevel.getCurrentObjectListFilename());
   mNpcManager.createNpcs(mLevel.getCurrentNPCListFilename());
   mState = GameplayState::START;
+}
+
+void ExploreScreen::checkEnvironment(GameData::Position pos)
+{
+  // check if the object is on the left from the player
+  if (mObjectManager.isObject({pos.first - 1, pos.second})) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first - 1, pos.second });
+    if (!pObject->isVisible() && checkVisibility(pObject->getVisibility())) {
+      pObject->setVisibleStatus(true);
+    }
+  }
+  // check if the player right of the door
+  if (mObjectManager.isObject({ pos.first + 1, pos.second })) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first + 1, pos.second });
+    if (!pObject->isVisible() && checkVisibility(pObject->getVisibility())) {
+      pObject->setVisibleStatus(true);
+    }
+  }
+  // check if the player above the door
+  if (mObjectManager.isObject({ pos.first, pos.second - 1 })) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second - 1 });
+    if (!pObject->isVisible() && checkVisibility(pObject->getVisibility())) {
+      pObject->setVisibleStatus(true);
+    }
+  }
+  // check if the player below the door
+  if (mObjectManager.isObject({ pos.first, pos.second + 1 })) {
+    std::shared_ptr<GameObject> pObject = mObjectManager.getObject({ pos.first, pos.second + 1 });
+    if (!pObject->isVisible() && checkVisibility(pObject->getVisibility())) {
+      pObject->setVisibleStatus(true);
+    }
+  }
+}
+
+bool ExploreScreen::checkVisibility(size_t value)
+{
+  size_t randomValue = dr::EngineUtility::getRandomInRange(GameData::DICE.x, GameData::DICE.y);
+  std::cout << std::format("??? Skill: {} Dice: {} Check: {} ???\n", mPlayer.getSkillValue("Search"), 
+    randomValue, value);
+  return (mPlayer.getSkillValue("Search") + randomValue >= value) ? true : false;
 }

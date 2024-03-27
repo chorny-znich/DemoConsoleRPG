@@ -136,6 +136,17 @@ std::shared_ptr<GameObject>& ObjectManager::getObject(GameData::Position pos)
   throw std::runtime_error("the objects doesn't exist at this position");
 }
 
+bool ObjectManager::isObject(GameData::Position pos)
+{
+  for (auto object : mObjects) {
+    if (object->getPosition() == pos) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 void ObjectManager::destroyObject(GameData::Position pos)
 {
   auto iter = std::find_if(mObjects.begin(), mObjects.end(), [pos](const auto& obj) {

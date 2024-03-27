@@ -53,6 +53,8 @@ private:
 	void showShop();
 	std::string showLocationInfo();
 	void changeMap();
+	void checkEnvironment(GameData::Position pos);
+	bool checkVisibility(size_t value);
 
 public:
 	ExploreScreen();

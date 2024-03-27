@@ -19,7 +19,7 @@ Direction_to=DOWN
 Map_index_to=1
 Player_position_x=2
 Player_position_y=1
-Visibility=0
+Visibility=1
 
 [weapon_1]
 Id=100

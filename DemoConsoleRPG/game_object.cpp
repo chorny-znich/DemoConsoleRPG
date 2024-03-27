@@ -3,7 +3,10 @@
 GameObject::GameObject(GameObjectType type, GameObjectSubType subType) :
   mSymbol{},
   mType{ type },
-  mSubType{subType}
+  mSubType{subType},
+  mPrice{0},
+  mVisible{false},
+  mVisibility{0}
 {
 }
 
@@ -65,6 +68,16 @@ void GameObject::setPrice(size_t value)
 size_t GameObject::getPrice() const
 {
   return mPrice;
+}
+
+void GameObject::setVisibleStatus(bool value)
+{
+  mVisible = value;
+}
+
+bool GameObject::isVisible() const
+{
+  return mVisible;
 }
 
 void GameObject::setVisibility(size_t value)

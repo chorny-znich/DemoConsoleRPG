@@ -155,7 +155,7 @@ void RPStats::increaseSkill(const std::string& str)
 	mSkills[str] += 1;
 }
 
-size_t RPStats::getSearchSkill(const std::string& str)
+size_t RPStats::getSkillValue(const std::string& str)
 {
 	return mSkills[str];
 }

@@ -70,5 +70,5 @@ public:
 	size_t getHealth() const;
 
 	void increaseSkill(const std::string& str);
-	size_t getSearchSkill(const std::string& str);
+	size_t getSkillValue(const std::string& str);
 };

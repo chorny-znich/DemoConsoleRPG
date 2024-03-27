@@ -11,6 +11,7 @@ private:
   GameData::Position mPosition;
   char mSymbol;
   size_t mPrice;
+  bool mVisible;
   size_t mVisibility;
 
 protected:
@@ -31,6 +32,8 @@ public:
   char getSymbol() const;
   void setPrice(size_t value);
   size_t getPrice() const;
+  void setVisibleStatus(bool value);
+  bool isVisible() const;
   void setVisibility(size_t value);
   size_t getVisibility() const;
 };

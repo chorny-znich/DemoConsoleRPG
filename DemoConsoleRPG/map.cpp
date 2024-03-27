@@ -79,8 +79,10 @@ void Map::clearEnemy(GameData::Position pos)
 void Map::setObjects(const std::vector<std::shared_ptr<GameObject>>& objects)
 {
   for (const auto& object : objects) {
-    mRenderMap[object->getPosition().second][object->getPosition().first] = object->getSymbol();
-    mLocationMap[object->getPosition().second * mMapSize.x + object->getPosition().first].setObject(true);  
+    if (object->isVisible()) {
+      mRenderMap[object->getPosition().second][object->getPosition().first] = object->getSymbol();
+      mLocationMap[object->getPosition().second * mMapSize.x + object->getPosition().first].setObject(true);
+    }  
   }
 }
 
