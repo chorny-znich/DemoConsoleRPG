@@ -12,7 +12,9 @@ class Player : public RPStats, public Entity
 private:
   const int CHAR_STEP{ 1 };
   bool mMoving{ false };
+  bool mDangerStatus{ false };
   void create();
+
 public:
   Player();
   void update();
@@ -21,7 +23,9 @@ public:
   void moveNorth();
   void moveSouth();
   void moving(bool move);
-  bool isMoving() const; 
+  bool isMoving() const;
+  void setDangerStatus(bool status);
+  bool getDangerStatus() const;
   bool levelupCheck();
   void levelup();
 };

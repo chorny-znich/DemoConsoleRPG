@@ -9,38 +9,47 @@ Door_amount=7
 [money_1]
 Position_x=12
 Position_y=1
+Visibility=3
 
 [money_2]
 Position_x=6
 Position_y=3
+Visibility=3
 
 [money_3]
 Position_x=24
 Position_y=1
+Visibility=3
 
 [money_4]
 Position_x=26
 Position_y=11
+Visibility=3
 
 [money_5]
 Position_x=16
 Position_y=7
+Visibility=3
 
 [money_6]
 Position_x=3
 Position_y=12
+Visibility=3
 
 [money_7]
 Position_x=11
 Position_y=13
+Visibility=3
 
 [money_8]
 Position_x=24
 Position_y=7
+Visibility=3
 
 [money_9]
 Position_x=22
 Position_y=5
+Visibility=3
 
 [ladder_1]
 Name=Ladder
@@ -50,6 +59,7 @@ Direction_to=DOWN
 Map_index_to=3
 Player_position_x=1
 Player_position_y=13
+Visibility=1
 
 [ladder_2]
 Name=Ladder
@@ -59,30 +69,35 @@ Direction_to=UP
 Map_index_to=1
 Player_position_x=9
 Player_position_y=1
+Visibility=3
 
 [potion_1]
 Id=1
 Position_x=7
 Position_y=3
 Type=HEALING_POTION
+Visibility=4
 
 [weapon_1]
 Id=101
 Position_x=5
 Position_y=12
 Type=WEAPON
+Visibility=4
 
 [weapon_2]
 Id=102
 Position_x=1
 Position_y=8
 Type=WEAPON
+Visibility=5
 
 [armor_1]
 Id=500
 Position_x=26
 Position_y=9
 Type=ARMOR
+Visibility=5
 
 [door_1]
 Name=Door
@@ -90,6 +105,7 @@ Position_x=8
 Position_y=10
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_2]
 Name=Door
@@ -97,6 +113,7 @@ Position_x=23
 Position_y=9
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_3]
 Name=Door
@@ -104,6 +121,7 @@ Position_x=4
 Position_y=2
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_4]
 Name=Door
@@ -111,6 +129,7 @@ Position_x=1
 Position_y=13
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_5]
 Name=Door
@@ -118,6 +137,7 @@ Position_x=7
 Position_y=7
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_6]
 Name=Door
@@ -125,6 +145,7 @@ Position_x=10
 Position_y=9
 Status=Locked
 Type=DOOR
+Visibility=1
 
 [door_7]
 Name=Door
@@ -132,3 +153,4 @@ Position_x=22
 Position_y=1
 Status=Locked
 Type=DOOR
+Visibility=1

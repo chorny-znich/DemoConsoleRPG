@@ -80,6 +80,7 @@ void ExploreScreen::update()
   if (mState == GameplayState::PLAYER_TURN) {
     if (mPlayer.isMoving()) {
       if (battleDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
+        mPlayer.setDangerStatus(true);
         Enemy& enemy{ mEnemyManager.getEnemy({ mPlayer.getPosition().first + mPlayer.getMovement().first,
           mPlayer.getPosition().second + mPlayer.getMovement().second }) };
         Battle battle(mPlayer, enemy);
@@ -90,6 +91,7 @@ void ExploreScreen::update()
       }
       else if (!collisionDetection(mPlayer.getPosition(), mPlayer.getMovement())) {
         mCurrentMap.clearPlayer(mPlayer.getPosition()); 
+        mPlayer.setDangerStatus(false);
         mPlayer.update();
         mConsoleHUD.setBottomHUD("", 1);
       } 
@@ -132,7 +134,9 @@ void ExploreScreen::update()
   } 
   // Check for the objects visibility
   if (mState == GameplayState::START || mState == GameplayState::PLAYER_TURN_SHOW) {
-    checkEnvironment(mPlayer.getPosition());
+    if (!mPlayer.getDangerStatus()) {
+      checkEnvironment(mPlayer.getPosition());
+    }
   }
 
   // prepare the current map and the interface to render

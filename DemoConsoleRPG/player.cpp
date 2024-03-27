@@ -54,6 +54,16 @@ bool Player::isMoving() const
   return mMoving;
 }
 
+void Player::setDangerStatus(bool status)
+{
+  mDangerStatus = status;
+}
+
+bool Player::getDangerStatus() const
+{
+  return mDangerStatus;
+}
+
 bool Player::levelupCheck()
 {
   if (mExperience >= LevelCap.at(mLevel + 1)) {

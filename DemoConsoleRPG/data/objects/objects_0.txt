@@ -9,7 +9,7 @@ Door_amount=0
 [money_1]
 Position_x=4
 Position_y=2
-Visibility=2
+Visibility=3
 
 [ladder_1]
 Name=Ladder
@@ -26,4 +26,4 @@ Id=100
 Position_x=3
 Position_y=1
 Type=WEAPON
-Visibility=2
+Visibility=3
