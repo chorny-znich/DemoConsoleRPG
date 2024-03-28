@@ -25,7 +25,11 @@ namespace GameData {
   inline namespace path {
     const std::string PlayerInfo = R"(data/player.txt)";
     const std::string ItemsInfo = R"(data/items.txt)";
-  } /*
+  }
+  
+  const char UI_DIVIDER_SYMBOL = '=';
+  const size_t UI_DIVIDER_WIDTH = 25;
+  /*
   enum class RPClass {
     Adventurer
   };*/

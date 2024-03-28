@@ -44,6 +44,7 @@ void Map::render() {
   for (const auto& str : mRenderMap) {
     std::cout << str << '\n';
   }
+  std::cout << "\n";
 }
 
 void Map::setPlayer(GameData::Position pos)
