@@ -19,7 +19,7 @@ private:
 
 public:  
   void showDivider(char ch, size_t width);
-  void AddToHud(HUD_Type type, std::string str, size_t line);
+  void addToHud(HUD_Type type, std::string str, size_t line);
   void display(HUD_Type type);
   void displayCommandString();
   void clear();

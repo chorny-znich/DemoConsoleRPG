@@ -9,7 +9,7 @@ void ConsoleHUD::showDivider(char ch, size_t width)
 }
 
 // Add the text to the appropriate container
-void ConsoleHUD::AddToHud(HUD_Type type, std::string str, size_t line)
+void ConsoleHUD::addToHud(HUD_Type type, std::string str, size_t line)
 {
   switch (type) {
   case HUD_Type::PLAYER_INFO:

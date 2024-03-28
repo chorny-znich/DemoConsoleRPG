@@ -85,7 +85,7 @@ void ExploreScreen::update()
         Enemy& enemy{ mEnemyManager.getEnemy({ mPlayer.getPosition().first + mPlayer.getMovement().first,
           mPlayer.getPosition().second + mPlayer.getMovement().second }) };
         Battle battle(mPlayer, enemy);
-        mConsoleHUD.AddToHud(HUD_Type::GAME_LOG, battle.playerAttack(), 1);
+        mConsoleHUD.addToHud(HUD_Type::GAME_LOG, battle.playerAttack(), 1);
         if (!enemy.isActive()) {
           mCurrentMap.clearEnemy(enemy.getPosition());
         }
@@ -94,15 +94,15 @@ void ExploreScreen::update()
         mCurrentMap.clearPlayer(mPlayer.getPosition()); 
         mPlayer.setDangerStatus(false);
         mPlayer.update();
-        mConsoleHUD.AddToHud(HUD_Type::GAME_LOG, "", 1);
+        mConsoleHUD.addToHud(HUD_Type::GAME_LOG, "", 1);
       } 
     } 
-    mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, showLocationInfo(), 0);
+    mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, showLocationInfo(), 0);
     mState = GameplayState::PLAYER_TURN_SHOW;
   } 
   if (mState == GameplayState::ENEMY_TURN) {
     std::vector<Enemy>& enemies = mEnemyManager.getEnemies();
-    mConsoleHUD.AddToHud(HUD_Type::GAME_LOG, std::string{ std::format("") }, 2);
+    mConsoleHUD.addToHud(HUD_Type::GAME_LOG, std::string{ std::format("") }, 2);
     for (auto& enemy : enemies) {
       if (enemy.isActive()) {
         // the enemy is near the player
@@ -115,7 +115,7 @@ void ExploreScreen::update()
         // enemy attack player
         if (enemy.isInBattle()) {
           Battle battle(mPlayer, enemy);
-          mConsoleHUD.AddToHud(HUD_Type::GAME_LOG, battle.enemyAttack(), 2);
+          mConsoleHUD.addToHud(HUD_Type::GAME_LOG, battle.enemyAttack(), 2);
           if (mPlayer.getHealth() <= 0) {
             GameState::destroyAllScreens();
           }
@@ -149,10 +149,10 @@ void ExploreScreen::update()
     mCurrentMap.setNpcs(mNpcManager.getNpcs());
     mCurrentMap.setPlayer(mPlayer.getPosition());
     
-    mConsoleHUD.AddToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("Name: {} exp:{} ${}", mPlayer.getName(), mPlayer.getExperience(),
+    mConsoleHUD.addToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("Name: {} exp:{} ${}", mPlayer.getName(), mPlayer.getExperience(),
       mPlayer.getMoney()) }, 0);
-    mConsoleHUD.AddToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("HP:{}/{}", mPlayer.getHealth(), mPlayer.getMaxHealth()) }, 1);
-    mConsoleHUD.AddToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("Atk:{} Def:{}", mPlayer.getAttack(), mPlayer.getDefence()) }, 2);
+    mConsoleHUD.addToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("HP:{}/{}", mPlayer.getHealth(), mPlayer.getMaxHealth()) }, 1);
+    mConsoleHUD.addToHud(HUD_Type::PLAYER_INFO, std::string{ std::format("Atk:{} Def:{}", mPlayer.getAttack(), mPlayer.getDefence()) }, 2);
   }  
 }
 
@@ -247,7 +247,7 @@ void ExploreScreen::pickItem()
     if (pObject->getType() == GameObjectType::MONEY) {
       auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
       mPlayer.increaseMoney(pMoneyObject->getAmount());
-      mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("You pick up ${}", pMoneyObject->getAmount()), 1);
+      mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("You pick up ${}", pMoneyObject->getAmount()), 1);
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
@@ -256,7 +256,7 @@ void ExploreScreen::pickItem()
         if (pObject->getSubType() == GameObjectSubType::HEALING_POTION) {
           auto pHealingPotionObject = std::static_pointer_cast<HealingPotion>(pObject);
           mInventory.add(pHealingPotionObject);
-          mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a healing potion"), 1);
+          mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a healing potion"), 1);
           location.setObject(false);
           mObjectManager.destroyObject(currentPlayerLocation);
           location.setSymbol(' ');
@@ -265,7 +265,7 @@ void ExploreScreen::pickItem()
     else if (pObject->getType() == GameObjectType::WEAPON) {
       auto pWeaponObject = std::static_pointer_cast<Weapon>(pObject);
       mInventory.add(pWeaponObject);
-      mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a {}", pWeaponObject->getName()), 1);
+      mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a {}", pWeaponObject->getName()), 1);
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
@@ -273,14 +273,14 @@ void ExploreScreen::pickItem()
     else if (pObject->getType() == GameObjectType::ARMOR) {
       auto pArmorObject = std::static_pointer_cast<Armor>(pObject);
       mInventory.add(pArmorObject);
-      mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a {}", pArmorObject->getName()), 1);
+      mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("You pick up a {}", pArmorObject->getName()), 1);
       location.setObject(false);
       mObjectManager.destroyObject(currentPlayerLocation);
       location.setSymbol(' ');
     }
   }
   else {
-    mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("Nothing to pick up here"), 1);
+    mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("Nothing to pick up here"), 1);
   } 
 }
 
@@ -292,14 +292,14 @@ void ExploreScreen::useLadder()
     std::shared_ptr<GameObject> pObject = mObjectManager.getObject(currentPlayerLocation);
     if (pObject->getType() == GameObjectType::LADDER) {
       auto pLadderObject = std::static_pointer_cast<Ladder>(pObject);
-      mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("You use the ladder"), 1);
+      mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("You use the ladder"), 1);
       mLevel.setCurrentMapIndex(pLadderObject->getMapIndexTo());
       mLevel.setPlayerSpawnPosition(pLadderObject->getPlayerSpawnTo());
       changeMap();
     }
   }
   else {
-    mConsoleHUD.AddToHud(HUD_Type::LOCATION_INFO, std::format("There is no ladder here"), 1);
+    mConsoleHUD.addToHud(HUD_Type::LOCATION_INFO, std::format("There is no ladder here"), 1);
   }
 }
 
@@ -471,7 +471,7 @@ void ExploreScreen::checkEnvironment(GameData::Position pos)
 bool ExploreScreen::checkVisibility(size_t value)
 {
   size_t randomValue = dr::EngineUtility::getRandomInRange(GameData::DICE.x, GameData::DICE.y);
-  std::cout << std::format("??? Skill: {} Dice: {} Check: {} ???\n", mPlayer.getSkillValue("Search"), 
-    randomValue, value);
+  mConsoleHUD.addToHud(HUD_Type::GAME_LOG, std::format("Search Skill: {} Dice: {} Value to check: {} ???\n", mPlayer.getSkillValue("Search"), 
+    randomValue, value), 0);
   return (mPlayer.getSkillValue("Search") + randomValue >= value) ? true : false;
 }
