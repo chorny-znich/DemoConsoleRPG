@@ -118,6 +118,7 @@ void ExploreScreen::update()
           mConsoleHUD.addToHud(HUD_Type::GAME_LOG, battle.enemyAttack(), 2);
           if (mPlayer.getHealth() <= 0) {
             GameState::destroyAllScreens();
+            return;
           }
         }
         else {

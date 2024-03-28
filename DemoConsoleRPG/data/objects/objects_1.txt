@@ -37,8 +37,8 @@ Position_x=8
 Position_y=1
 Direction_to=DOWN
 Map_index_to=2
-Player_position_x=26
-Player_position_y=14
+Player_position_x=5
+Player_position_y=8
 Visibility=1
 
 [potion_1]

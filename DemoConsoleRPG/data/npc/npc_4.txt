@@ -2,9 +2,9 @@
 Npc_amount=1
 
 [npc_1]
-Name=Trader 1
-Position_x=25
-Position_y=1
+Name=Trader 2
+Position_x=3
+Position_y=9
 Symbol=T
 NumberOfItems=7
 Item_1=1

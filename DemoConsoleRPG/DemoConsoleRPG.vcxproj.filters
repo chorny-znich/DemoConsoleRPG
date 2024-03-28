@@ -319,9 +319,6 @@
     <Text Include="data\enemies\enemies_1.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
-    <Text Include="data\enemies\enemies_2.txt">
-      <Filter>Файлы ресурсов\Enemy</Filter>
-    </Text>
     <Text Include="data\enemies\enemies_0.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
@@ -331,7 +328,7 @@
     <Text Include="data\objects\objects_1.txt">
       <Filter>Файлы ресурсов\Object</Filter>
     </Text>
-    <Text Include="data\objects\objects_2.txt">
+    <Text Include="data\objects\objects_3.txt">
       <Filter>Файлы ресурсов\Object</Filter>
     </Text>
     <Text Include="data\player.txt">
@@ -343,11 +340,8 @@
     <Text Include="data\maps\map_1.txt">
       <Filter>Файлы ресурсов\Map</Filter>
     </Text>
-    <Text Include="data\maps\map_2.txt">
+    <Text Include="data\maps\map_3.txt">
       <Filter>Файлы ресурсов\Map</Filter>
-    </Text>
-    <Text Include="enemies_3.txt">
-      <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
     <Text Include="enemy_list.txt">
       <Filter>Файлы ресурсов\Enemy</Filter>
@@ -361,17 +355,32 @@
     <Text Include="data\npc\npc_1.txt">
       <Filter>Файлы ресурсов\NPC</Filter>
     </Text>
-    <Text Include="data\npc\npc_2.txt">
-      <Filter>Файлы ресурсов\NPC</Filter>
-    </Text>
-    <Text Include="data\maps\map_3.txt">
-      <Filter>Файлы ресурсов\Map</Filter>
-    </Text>
     <Text Include="data\npc\npc_3.txt">
       <Filter>Файлы ресурсов\NPC</Filter>
     </Text>
-    <Text Include="data\objects\objects_3.txt">
+    <Text Include="data\maps\map_4.txt">
+      <Filter>Файлы ресурсов\Map</Filter>
+    </Text>
+    <Text Include="data\npc\npc_4.txt">
+      <Filter>Файлы ресурсов\NPC</Filter>
+    </Text>
+    <Text Include="data\objects\objects_4.txt">
       <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="data\maps\map_2.txt">
+      <Filter>Файлы ресурсов\Map</Filter>
+    </Text>
+    <Text Include="data\objects\objects_2.txt">
+      <Filter>Файлы ресурсов\Object</Filter>
+    </Text>
+    <Text Include="data\enemies\enemies_2.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="data\enemies\enemies_3.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
+    </Text>
+    <Text Include="data\enemies\enemies_4.txt">
+      <Filter>Файлы ресурсов\Enemy</Filter>
     </Text>
   </ItemGroup>
 </Project>

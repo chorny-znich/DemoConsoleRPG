@@ -111,6 +111,7 @@ void ObjectManager::createObjects(const std::string& filename)
         pDoor->setSymbol(MapSymbols::DOOR_UNLOCKED);
         pDoor->setStatus(DoorStatus::UNLOCKED);
       }
+      pDoor->setVisibility(std::stoul(section.at("Visibility")));
       mObjects.push_back(std::move(pDoor));
     }
   }

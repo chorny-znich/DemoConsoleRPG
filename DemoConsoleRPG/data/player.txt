@@ -1,7 +1,7 @@
 [player]
 Name=Vargar
 Experience=0
-Health=20
+Health=2
 Attack=3
 Defence=11
 Damage_min=1

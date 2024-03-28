@@ -33,18 +33,18 @@ Attack=2
 Defence=6
 Damage_min=1
 Damage_max=2
-Position_x=9
+Position_x=11
 Position_y=3
 Symbol=g
 
 [enemy_4]
-Name=Big Goblin
-Experience_for_kill=15
-Health=8
-Attack=3
-Defence=8
+Name=Goblin
+Experience_for_kill=10
+Health=6
+Attack=2
+Defence=6
 Damage_min=1
-Damage_max=4
+Damage_max=2
 Position_x=10
 Position_y=1
-Symbol=G
+Symbol=g

@@ -28,7 +28,7 @@ namespace GameData {
   }
   
   const char UI_DIVIDER_SYMBOL = '=';
-  const size_t UI_DIVIDER_WIDTH = 25;
+  const size_t UI_DIVIDER_WIDTH = 30;
   /*
   enum class RPClass {
     Adventurer

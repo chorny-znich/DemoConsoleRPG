@@ -226,21 +226,24 @@
     <Text Include="data\enemies\enemies_0.txt" />
     <Text Include="data\enemies\enemies_1.txt" />
     <Text Include="data\enemies\enemies_2.txt" />
+    <Text Include="data\enemies\enemies_3.txt" />
+    <Text Include="data\enemies\enemies_4.txt" />
     <Text Include="data\items.txt" />
     <Text Include="data\maps\map_0.txt" />
     <Text Include="data\maps\map_1.txt" />
     <Text Include="data\maps\map_2.txt" />
     <Text Include="data\maps\map_3.txt" />
-    <Text Include="data\npc\npc_2.txt" />
+    <Text Include="data\maps\map_4.txt" />
+    <Text Include="data\npc\npc_3.txt" />
     <Text Include="data\npc\npc_1.txt" />
     <Text Include="data\npc\npc_0.txt" />
-    <Text Include="data\npc\npc_3.txt" />
+    <Text Include="data\npc\npc_4.txt" />
     <Text Include="data\objects\objects_0.txt" />
     <Text Include="data\objects\objects_1.txt" />
     <Text Include="data\objects\objects_2.txt" />
     <Text Include="data\objects\objects_3.txt" />
+    <Text Include="data\objects\objects_4.txt" />
     <Text Include="data\player.txt" />
-    <Text Include="enemies_3.txt" />
     <Text Include="enemy_list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
